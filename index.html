@@ -30,10 +30,14 @@
   .miami-motif { display: inline-flex; align-items: center; gap: 12px; color: var(--blue); }
   .miami-motif svg { width: 30px; height: 30px; }
 
-  /* DNA backdrop behind the CTA section */
-  .cta-outer { position: relative; background: #0a1020 url("img/cta-dna.png") center/cover no-repeat; }
-  .cta-outer::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,12,26,0.55), rgba(8,12,26,0.42)); pointer-events: none; }
-  .cta-outer .wrap { position: relative; z-index: 1; }
+  /* DNA video backdrop behind the CTA section */
+  .cta-outer { position: relative; overflow: hidden; background: #0a1020; }
+  .cta-outer-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  .cta-outer-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 1.1s ease; }
+  .cta-outer-bg video.cta-dna-bg--back { opacity: 0; }
+  .cta-outer::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,12,26,0.55), rgba(8,12,26,0.42)); pointer-events: none; }
+  .cta-outer::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at 50% 45%, rgba(70,110,220,0.14) 0%, transparent 62%); pointer-events: none; }
+  .cta-outer .wrap { position: relative; z-index: 2; }
 
   /* office tour video */
   .tour { position: relative; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 16/9; background: #0a1020; }
@@ -145,7 +149,7 @@
       <p class="lead" style="margin-top:18px"><span data-es="Desde nuestra sede en Miami-Dade, nuestro equipo gestiona cada fase del ciclo de vida del ensayo clínico con el rigor que exigen los reguladores y la calidez que recuerdan los pacientes.">From our Miami-Dade facility, our team manages every phase of the clinical trial lifecycle with the rigor regulators expect and the warmth patients remember.</span></p>
       <ul class="ticks" style="margin-top:28px">
         <li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-es="Investigadores experimentados y coordinadores de estudio certificados">Experienced PIs and certified study coordinators</span></li>
-        <li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-es="Comunidad de pacientes diversa y multilingüe del sur de Florida">Diverse, multilingual South-Florida patient community</span></li>
+        <li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-es="Comunidad de pacientes diversa y multilingüe de Miami">Diverse, multilingual Miami patient community</span></li>
         <li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-es="Diagnóstico, monitoreo y almacenamiento seguro en el sitio">On-site diagnostics, monitoring &amp; secure storage</span></li>
       </ul>
       <a class="btn btn-ghost" style="margin-top:32px" href="about.html"><span data-es="Más sobre nosotros">More about us</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
@@ -358,6 +362,10 @@
 
 <!-- ============ CTA BAND ============ -->
 <section class="section section--tight cta-outer">
+  <div class="cta-outer-bg" aria-hidden="true">
+    <video class="cta-dna-bg" id="ctaDnaA" autoplay muted playsinline poster="img/cta-dna.png" src="video/dna-footer.mp4"></video>
+    <video class="cta-dna-bg cta-dna-bg--back" id="ctaDnaB" muted playsinline poster="img/cta-dna.png" src="video/dna-footer.mp4"></video>
+  </div>
   <div class="wrap">
     <div class="cta-band reveal" style="text-align:center;">
       <div class="glow"></div>
@@ -439,6 +447,58 @@
   }
   btn.addEventListener("click", start);
   vid.addEventListener("ended", function () { wrap.classList.remove("playing"); vid.controls = false; });
+})();
+
+/* CTA DNA: seamless crossfade loop */
+(function () {
+  var wrap = document.querySelector(".cta-outer-bg");
+  var a = document.getElementById("ctaDnaA");
+  var b = document.getElementById("ctaDnaB");
+  if (!wrap || !a || !b) return;
+  var FADE = 1.1;
+  var front = a, back = b;
+  var swapping = false;
+
+  function tryPlay(v) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+
+  function usePoster() {
+    a.remove(); b.remove();
+    wrap.style.background = 'url("img/cta-dna.png") center/cover no-repeat';
+  }
+
+  a.addEventListener("error", usePoster);
+  b.addEventListener("error", usePoster);
+
+  tryPlay(a);
+  b.pause();
+
+  function onTime() {
+    var v = this;
+    if (v !== front || swapping) return;
+    var d = v.duration;
+    if (!d || isNaN(d)) return;
+    if (d - v.currentTime <= FADE) {
+      swapping = true;
+      back.currentTime = 0;
+      tryPlay(back);
+      back.classList.remove("cta-dna-bg--back");
+      front.classList.add("cta-dna-bg--back");
+      var oldFront = front;
+      front = back; back = oldFront;
+      setTimeout(function () {
+        back.pause();
+        back.currentTime = 0;
+        swapping = false;
+      }, FADE * 1000 + 60);
+    }
+  }
+
+  a.addEventListener("timeupdate", onTime);
+  b.addEventListener("timeupdate", onTime);
+
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) tryPlay(front);
+  });
 })();
 </script>
 </body>

@@ -46,8 +46,8 @@
     },
     {
       keywords: ["enroll", "recruit", "inscrip", "reclut"],
-      en: "Pre-qualified registries and community outreach help us hit recruitment targets ahead of schedule. We pair operational discipline with a deeply engaged South-Florida patient community.",
-      es: "Los registros precalificados y el alcance comunitario nos permiten alcanzar las metas de reclutamiento antes de lo previsto. Combinamos disciplina operativa con una comunidad de pacientes profundamente comprometida en el sur de Florida."
+      en: "Pre-qualified registries and community outreach help us hit recruitment targets ahead of schedule. We pair operational discipline with a deeply engaged Miami patient community.",
+      es: "Los registros precalificados y el alcance comunitario nos permiten alcanzar las metas de reclutamiento antes de lo previsto. Combinamos disciplina operativa con una comunidad de pacientes profundamente comprometida en Miami."
     },
     {
       keywords: ["phase", "fase", "i-iv", "i–iv"],

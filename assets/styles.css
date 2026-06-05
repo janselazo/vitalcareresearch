@@ -189,6 +189,20 @@ p { margin: 0 0 1em; }
 .footer-social a:hover { background: var(--blue); color: #fff; border-color: var(--blue); transform: translateY(-3px); }
 .footer-social svg { width: 19px; height: 19px; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-block: 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
+.footer-legal { display: inline-flex; align-items: center; gap: 14px; }
+.footer-legal a { color: var(--muted); font-weight: 600; transition: color .2s; }
+.footer-legal a:hover { color: var(--blue); }
+
+/* legal pages */
+.legal { max-width: 760px; }
+.legal .updated { font-size: 14px; color: var(--muted); margin-top: 12px; }
+.legal h2 { font-size: clamp(20px, 2.2vw, 26px); margin: 2.2em 0 0.65em; }
+.legal h2:first-of-type { margin-top: 0; }
+.legal p, .legal li { color: var(--body); font-size: 16px; line-height: 1.65; }
+.legal ul { margin: 0.6em 0 1em; padding-left: 1.25em; }
+.legal li { margin-bottom: 0.45em; }
+.legal a { color: var(--blue); font-weight: 600; }
+.legal a:hover { color: var(--blue-deep); }
 
 /* ---------- cards ---------- */
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); transition: transform .35s var(--ease), box-shadow .35s; position: relative; overflow: hidden; }

@@ -101,7 +101,7 @@
         <div class="wrap footer-grid">
           <div>
             ${logoLockup("index.html")}
-            <p class="footer-blurb" data-es="Un centro de investigación clínica del sur de Florida que avanza la medicina mediante ensayos rigurosos y centrados en el paciente.">A South-Florida clinical research center advancing medicine through rigorous, patient-centered trials.</p>
+            <p class="footer-blurb" data-es="Un centro de investigación clínica de Miami que avanza la medicina mediante ensayos rigurosos y centrados en el paciente.">A Miami clinical research center advancing medicine through rigorous, patient-centered trials.</p>
             <div class="footer-social">
               <a href="https://facebook.com/vitalcareresearch" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
               <a href="https://instagram.com/vitalcareresearch" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg></a>
@@ -138,7 +138,9 @@
         </div>
         <div class="wrap footer-bottom">
           <span data-es="© ${new Date().getFullYear()} Vital Care Research. Todos los derechos reservados.">© ${new Date().getFullYear()} Vital Care Research. All rights reserved.</span>
-          <span>🏝️ Miami, Florida · USA</span>
+          <span class="footer-legal">
+            <a href="privacy.html" data-es="Privacidad">Privacy</a><a href="terms.html" data-es="Términos">Terms</a>
+          </span>
         </div>
       </footer>`;
   }
