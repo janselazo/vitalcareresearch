@@ -6,6 +6,7 @@
 
   var PHONE = "(786) 280-1178";
   var PHONE_TEL = "tel:+17862801178";
+  var EMAIL = "vitalcareresearch@gmail.com";
   var ADDRESS = "3399 NW 72nd Ave, Suite 219, Miami, FL 33122";
 
   var KNOWLEDGE = [
@@ -71,8 +72,8 @@
     },
     {
       keywords: ["email", "mail", "correo"],
-      en: "Email us at <a href=\"mailto:info@vitalcareresearch.com\">info@vitalcareresearch.com</a> or use our <a href=\"contact.html\">contact form</a>.",
-      es: "Escríbanos a <a href=\"mailto:info@vitalcareresearch.com\">info@vitalcareresearch.com</a> o use nuestro <a href=\"contact.html\">formulario de contacto</a>."
+      en: "Email us at <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> or use our <a href=\"contact.html\">contact form</a>.",
+      es: "Escríbanos a <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> o use nuestro <a href=\"contact.html\">formulario de contacto</a>."
     },
     {
       keywords: ["hour", "open", "schedule", "horario", "abiert"],
@@ -96,8 +97,8 @@
     },
     {
       keywords: ["contact", "reach", "touch", "contac", "comunic"],
-      en: "Reach us at " + PHONE + ", <a href=\"mailto:info@vitalcareresearch.com\">info@vitalcareresearch.com</a>, or through our <a href=\"contact.html\">contact form</a>.",
-      es: "Comuníquese al " + PHONE + ", <a href=\"mailto:info@vitalcareresearch.com\">info@vitalcareresearch.com</a>, o mediante nuestro <a href=\"contact.html\">formulario de contacto</a>."
+      en: "Reach us at " + PHONE + ", <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>, or through our <a href=\"contact.html\">contact form</a>.",
+      es: "Comuníquese al " + PHONE + ", <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>, o mediante nuestro <a href=\"contact.html\">formulario de contacto</a>."
     }
   ];
 

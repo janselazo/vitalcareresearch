@@ -137,7 +137,9 @@
               <label for="consent"><span data-es="Acepto que Vital Care Research me contacte sobre estudios y servicios. Mi información se mantendrá confidencial.">I agree to be contacted by Vital Care Research about studies and services. My information will be kept confidential.</span> <span class="err-msg" data-for="consent" style="margin-top:4px;"><span data-es="Por favor, confirme para continuar.">Please confirm to continue.</span></span></label>
             </div>
 
-            <button type="submit" class="btn btn-primary no-circle" style="width:100%; justify-content:center; padding:16px;"><span data-es="Enviar mensaje">Send message</span></button>
+            <div class="err-msg" id="formSubmitErr" style="margin-bottom:16px; text-align:center;"><span data-es="No pudimos enviar su mensaje. Inténtelo de nuevo o llame al (786) 280-1178.">We couldn't send your message. Please try again or call (786) 280-1178.</span></div>
+
+            <button type="submit" id="submitBtn" class="btn btn-primary no-circle" style="width:100%; justify-content:center; padding:16px;"><span id="submitBtnLabel" data-es="Enviar mensaje">Send message</span></button>
           </form>
 
           <div class="form-success" id="formSuccess">
@@ -157,8 +159,16 @@
 <script src="assets/chatbot.js"></script>
 <script>
 (function(){
+  // Register at https://web3forms.com with vitalcareresearch@gmail.com, then replace the key below.
+  var WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+
   var form = document.getElementById('contactForm');
   var ok = document.getElementById('formSuccess');
+  var submitBtn = document.getElementById('submitBtn');
+  var submitBtnLabel = document.getElementById('submitBtnLabel');
+  var formSubmitErr = document.getElementById('formSubmitErr');
+
+  function isEs(){ return document.documentElement.getAttribute('lang') === 'es'; }
 
   function setErr(id, show){
     var f = document.getElementById(id);
@@ -166,6 +176,20 @@
     if(f) f.classList.toggle('err', show);
     if(m) m.classList.toggle('show', show);
   }
+
+  function subjectForRole(role){
+    if(role.indexOf('Sponsor') === 0) return 'New Sponsor/CRO Inquiry — Vital Care Research';
+    if(role === 'Physician') return 'New Physician Referral — Vital Care Research';
+    return 'New Patient Inquiry — Vital Care Research';
+  }
+
+  function setSubmitting(busy){
+    submitBtn.disabled = busy;
+    submitBtnLabel.textContent = busy
+      ? (isEs() ? 'Enviando…' : 'Sending…')
+      : (isEs() ? 'Enviar mensaje' : 'Send message');
+  }
+
   ['name','email','message','consent'].forEach(function(id){
     var el = document.getElementById(id);
     el.addEventListener('input', function(){ setErr(id, false); });
@@ -174,11 +198,18 @@
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    formSubmitErr.classList.remove('show');
+
     var valid = true;
     var name = document.getElementById('name').value.trim();
     var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
     var msg = document.getElementById('message').value.trim();
     var consent = document.getElementById('consent').checked;
+    var role = document.querySelector('input[name="role"]:checked').value;
+    var areaEl = document.getElementById('area');
+    var area = areaEl.options[areaEl.selectedIndex].text;
+    if(areaEl.value === '') area = isEs() ? 'No especificado' : 'Not specified';
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     if(!name){ setErr('name', true); valid=false; }
@@ -191,8 +222,39 @@
       if(first) first.focus();
       return;
     }
-    form.style.display = 'none';
-    ok.classList.add('show');
+
+    setSubmitting(true);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: subjectForRole(role),
+        from_name: name,
+        name: name,
+        email: email,
+        phone: phone || (isEs() ? 'No proporcionado' : 'Not provided'),
+        role: role,
+        area_of_interest: area,
+        message: msg,
+        consent: 'Yes'
+      })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        ok.classList.add('show');
+        return;
+      }
+      formSubmitErr.classList.add('show');
+      setSubmitting(false);
+    })
+    .catch(function(){
+      formSubmitErr.classList.add('show');
+      setSubmitting(false);
+    });
   });
 
   var roleInputs = document.querySelectorAll('input[name="role"]');
@@ -202,14 +264,20 @@
   roleInputs.forEach(function(r){
     r.addEventListener('change', function(){
       if(r.value.indexOf('Sponsor') === 0){
-        areaLabel.innerHTML = 'Therapeutic area';
-        msgEl.placeholder = 'Share your protocol synopsis, timelines, or feasibility questions…';
-      } else if(r.value === '<span data-es="Médico">Physician</span>'){
-        areaLabel.innerHTML = 'Condition / area';
-        msgEl.placeholder = 'Tell us about the patient you\'d like to refer…';
+        areaLabel.innerHTML = '<span data-es="Área terapéutica">Therapeutic area</span>';
+        msgEl.placeholder = isEs()
+          ? 'Comparta la sinopsis del protocolo, cronogramas o preguntas de viabilidad…'
+          : 'Share your protocol synopsis, timelines, or feasibility questions…';
+      } else if(r.value === 'Physician'){
+        areaLabel.innerHTML = '<span data-es="Condición / área">Condition / area</span>';
+        msgEl.placeholder = isEs()
+          ? 'Cuéntenos sobre el paciente que desea referir…'
+          : 'Tell us about the patient you\'d like to refer…';
       } else {
         areaLabel.innerHTML = '<span data-es="Área de interés">Area of interest</span>';
-        msgEl.placeholder = 'Tell us how we can help…';
+        msgEl.placeholder = isEs()
+          ? 'Cuéntenos cómo podemos ayudar…'
+          : 'Tell us how we can help…';
       }
     });
   });
