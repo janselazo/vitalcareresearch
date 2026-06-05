@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Vital Care Research</title>
+<meta name="description" content="Contact Vital Care Research in Miami, FL. Volunteer for a study, refer a patient, or partner with us as a sponsor. Call (786) 280-1178.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231f3d34'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='7'%3E%3Ccircle cx='40' cy='38' r='29'/%3E%3C/g%3E%3Crect x='55' y='58' width='10.5' height='34' rx='5.25' transform='rotate(-45 60 75)' fill='%23ffffff'/%3E%3Cpolyline points='22,17 39,53 48,33 51,39 55,18 59,30' fill='none' stroke='%231f77df' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .contact-grid { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,56px); align-items:start; }
+  .info-card { padding:30px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--surface); box-shadow:var(--shadow-sm); }
+  .info-row { display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--line-2); }
+  .info-row:last-child { border-bottom:none; padding-bottom:0; }
+  .info-row:first-child { padding-top:0; }
+  .info-row .ico { width:44px; height:44px; flex:none; border-radius:13px; background:var(--blue-soft); color:var(--blue-deep); display:flex; align-items:center; justify-content:center; }
+  .info-row .ico svg { width:21px; height:21px; }
+  .info-row .k { font-size:12px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); }
+  .info-row .v { color:var(--ink); font-size:16px; font-weight:500; margin-top:4px; }
+  .info-row a.v:hover { color:var(--green); }
+
+  .map-ph { margin-top:22px; aspect-ratio:16/7; }
+
+  form .field { margin-bottom:20px; }
+  form label { display:block; font-size:13px; font-weight:600; color:var(--ink-2); margin-bottom:9px; }
+  form .req { color:var(--blue); }
+  input, select, textarea { width:100%; font-family:var(--f-sans); font-size:16px; color:var(--ink); background:var(--panel); border:1.5px solid transparent; border-radius:14px; padding:14px 16px; transition:border-color .25s, box-shadow .25s, background .25s; outline:none; }
+  input::placeholder, textarea::placeholder { color:var(--muted); }
+  textarea { resize:vertical; min-height:120px; }
+  input:focus, select:focus, textarea:focus { background:var(--surface); border-color:var(--blue); box-shadow:0 0 0 4px var(--blue-soft); }
+  input.err, select.err, textarea.err { border-color:#e2574c; box-shadow:0 0 0 4px rgba(226,87,76,0.12); }
+  .err-msg { color:#cf4034; font-size:13px; margin-top:7px; display:none; font-weight:500; }
+  .err-msg.show { display:block; }
+  select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238b968f' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:44px; }
+
+  .role-tabs { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .role-tabs label { display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:16px; border:1.5px solid var(--line); border-radius:16px; background:var(--surface); text-align:center; transition:all .25s var(--ease); margin:0; }
+  .role-tabs label .rt { font-weight:700; font-size:15px; color:var(--ink); }
+  .role-tabs label .rs { font-size:12px; color:var(--muted); }
+  .role-tabs input { display:none; }
+  .role-tabs label:hover { border-color:var(--blue); }
+  .role-tabs input:checked + label { border-color:var(--blue); background:var(--blue-soft); }
+  .role-tabs input:checked + label .rt { color:var(--blue-deep); }
+
+  .consent { display:flex; gap:12px; align-items:flex-start; }
+  .consent input { width:20px; height:20px; flex:none; margin-top:2px; accent-color:var(--green); }
+  .consent label { font-size:13.5px; font-weight:400; color:var(--body); margin:0; }
+
+  .form-success { display:none; text-align:center; padding:50px 30px; }
+  .form-success.show { display:block; animation:pop .5s var(--ease); }
+  @keyframes pop { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:none; } }
+  .form-success .check { width:74px; height:74px; margin:0 auto 22px; border-radius:50%; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; }
+  .form-success .check svg { width:34px; height:34px; }
+
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } .role-tabs{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-page="contact">
+<div id="site-header"></div>
+
+<section class="page-hero" data-screen-label="Contact hero">
+  <div class="wrap">
+    <span class="eyebrow reveal in"><span data-es="Contáctenos">Contact us</span></span>
+    <h1 class="display reveal in" data-d="1" style="margin-top:22px; max-width:16ch;"><span data-es="Comencemos la conversación.">Let's start the conversation.</span></h1>
+    <p class="lead reveal in" data-d="2"><span data-es="Sea voluntario en un estudio, refiera a un paciente o explore una colaboración. Cuéntenos un poco sobre usted y nos pondremos en contacto en un día hábil.">Volunteer for a study, refer a patient, or explore a partnership. Tell us a little about you and we'll be in touch within one business day.</span></p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="contact-grid">
+      <!-- info -->
+      <div class="reveal">
+        <div class="info-card">
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="k"><span data-es="Visítenos">Visit us</span></div><a class="v" href="https://maps.google.com/?q=3399+NW+72nd+Ave+Suite+219+Miami+FL+33122" target="_blank" rel="noopener">3399 NW 72nd Ave, Suite 219<br>Miami, FL 33122</a></div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="k"><span data-es="Llámenos">Call us</span></div><a class="v" href="tel:+17862801178">(786) 280-1178</a></div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="k"><span data-es="Horario">Hours</span></div><div class="v"><span data-es="Lun–Vie · 8:00 AM – 5:00 PM">Mon–Fri · 8:00 AM – 5:00 PM</span></div></div>
+          </div>
+        </div>
+        <div class="map-embed map-ph">
+          <iframe title="Vital Care Research location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3399%20NW%2072nd%20Ave%20Suite%20219%20Miami%20FL%2033122&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          <div class="map-card">
+            <div class="mt">Vital Care Research</div>
+            <div class="ma">3399 NW 72nd Ave, Suite 219<br>Miami, FL 33122</div>
+            <a href="https://maps.google.com/?q=3399+NW+72nd+Ave+Suite+219+Miami+FL+33122" target="_blank" rel="noopener"><span data-es="Abrir en Google Maps">Open in Google Maps</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <div class="reveal" data-d="1">
+        <div class="panel" style="padding:clamp(26px,3vw,40px);">
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label><span data-es="Soy">I am a</span> <span class="req">*</span></label>
+              <div class="role-tabs">
+                <input type="radio" name="role" id="r-patient" value="Patient / Volunteer" checked><label for="r-patient"><span class="rt"><span data-es="Paciente">Patient</span></span><span class="rs"><span data-es="Ser voluntario en un ensayo">Volunteer for a trial</span></span></label>
+                <input type="radio" name="role" id="r-sponsor" value="Sponsor / CRO"><label for="r-sponsor"><span class="rt"><span data-es="Patrocinador / CRO">Sponsor / CRO</span></span><span class="rs"><span data-es="Colabore con nosotros">Partner with us</span></span></label>
+                <input type="radio" name="role" id="r-physician" value="Physician"><label for="r-physician"><span class="rt"><span data-es="Médico">Physician</span></span><span class="rs"><span data-es="Referir un paciente">Refer a patient</span></span></label>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="field"><label for="name"><span data-es="Nombre completo">Full name</span> <span class="req">*</span></label><input type="text" id="name" name="name" autocomplete="name"><div class="err-msg" data-for="name"><span data-es="Por favor, ingrese su nombre.">Please enter your name.</span></div></div>
+              <div class="field"><label for="phone"><span data-es="Teléfono">Phone</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(786) 000-0000"></div>
+            </div>
+
+            <div class="field"><label for="email"><span data-es="Correo electrónico">Email</span> <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email"><div class="err-msg" data-for="email"><span data-es="Por favor, ingrese un correo electrónico válido.">Please enter a valid email address.</span></div></div>
+
+            <div class="field" id="areaField"><label for="area"><span data-es="Área de interés">Area of interest</span></label>
+              <select id="area" name="area">
+                <option value="" data-es="Seleccione una opción…">Select an option…</option>
+                <option data-es="Diabetes Tipo 2 / Metabólica">Type 2 Diabetes / Metabolic</option>
+                <option data-es="Cardiología / Hipertensión">Cardiology / Hypertension</option>
+                <option data-es="Obesidad / Control de Peso">Obesity / Weight Management</option>
+                <option data-es="Vacunas / Enfermedades Infecciosas">Vaccines / Infectious Disease</option>
+                <option data-es="Salud de la Mujer">Women's Health</option>
+                <option data-es="Otro / No estoy seguro">Other / Not sure</option>
+              </select>
+            </div>
+
+            <div class="field"><label for="message"><span data-es="Mensaje">Message</span> <span class="req">*</span></label><textarea id="message" name="message" placeholder="Tell us how we can help…" data-es-ph="Cuéntenos cómo podemos ayudar…"></textarea><div class="err-msg" data-for="message"><span data-es="Por favor, incluya un mensaje breve.">Please include a short message.</span></div></div>
+
+            <div class="field consent">
+              <input type="checkbox" id="consent" name="consent">
+              <label for="consent"><span data-es="Acepto que Vital Care Research me contacte sobre estudios y servicios. Mi información se mantendrá confidencial.">I agree to be contacted by Vital Care Research about studies and services. My information will be kept confidential.</span> <span class="err-msg" data-for="consent" style="margin-top:4px;"><span data-es="Por favor, confirme para continuar.">Please confirm to continue.</span></span></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary no-circle" style="width:100%; justify-content:center; padding:16px;"><span data-es="Enviar mensaje">Send message</span></button>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h3 style="margin-bottom:10px;"><span data-es="Gracias — mensaje recibido.">Thank you — message received.</span></h3>
+            <p class="muted" style="max-width:42ch; margin-inline:auto;" data-es="Un miembro de nuestro equipo se comunicará con usted en un día hábil. Para asuntos urgentes, llame al <a href=&quot;tel:+17862801178&quot; style=&quot;color:var(--green); font-weight:600;&quot;>(786) 280-1178</a>.">A member of our team will reach out within one business day. For urgent matters, call <a href="tel:+17862801178" style="color:var(--green); font-weight:600;">(786) 280-1178</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/i18n.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('contactForm');
+  var ok = document.getElementById('formSuccess');
+
+  function setErr(id, show){
+    var f = document.getElementById(id);
+    var m = document.querySelector('.err-msg[data-for="'+id+'"]');
+    if(f) f.classList.toggle('err', show);
+    if(m) m.classList.toggle('show', show);
+  }
+  ['name','email','message','consent'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener('input', function(){ setErr(id, false); });
+    el.addEventListener('change', function(){ setErr(id, false); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var msg = document.getElementById('message').value.trim();
+    var consent = document.getElementById('consent').checked;
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if(!name){ setErr('name', true); valid=false; }
+    if(!emailOk){ setErr('email', true); valid=false; }
+    if(!msg){ setErr('message', true); valid=false; }
+    if(!consent){ setErr('consent', true); valid=false; }
+
+    if(!valid){
+      var first = form.querySelector('.err');
+      if(first) first.focus();
+      return;
+    }
+    form.style.display = 'none';
+    ok.classList.add('show');
+  });
+
+  var roleInputs = document.querySelectorAll('input[name="role"]');
+  var areaField = document.getElementById('areaField');
+  var areaLabel = areaField.querySelector('label');
+  var msgEl = document.getElementById('message');
+  roleInputs.forEach(function(r){
+    r.addEventListener('change', function(){
+      if(r.value.indexOf('Sponsor') === 0){
+        areaLabel.innerHTML = 'Therapeutic area';
+        msgEl.placeholder = 'Share your protocol synopsis, timelines, or feasibility questions…';
+      } else if(r.value === '<span data-es="Médico">Physician</span>'){
+        areaLabel.innerHTML = 'Condition / area';
+        msgEl.placeholder = 'Tell us about the patient you\'d like to refer…';
+      } else {
+        areaLabel.innerHTML = '<span data-es="Área de interés">Area of interest</span>';
+        msgEl.placeholder = 'Tell us how we can help…';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

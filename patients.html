@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Patients — Vital Care Research</title>
+<meta name="description" content="Join a clinical trial at Vital Care Research in Miami, FL. Learn why people participate, what to expect, which studies are enrolling, and get your questions answered.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231f3d34'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='7'%3E%3Ccircle cx='40' cy='38' r='29'/%3E%3C/g%3E%3Crect x='55' y='58' width='10.5' height='34' rx='5.25' transform='rotate(-45 60 75)' fill='%23ffffff'/%3E%3Cpolyline points='22,17 39,53 48,33 51,39 55,18 59,30' fill='none' stroke='%231f77df' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .trial { display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; padding:26px 30px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--surface); box-shadow:var(--shadow-sm); transition:transform .3s var(--ease), box-shadow .3s; }
+  .trial:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+  .trial .area { font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--blue-deep); }
+  .trial h3 { font-size:21px; margin:8px 0 6px; }
+  .trial p { color:var(--body); font-size:14.5px; margin:0; }
+  .status { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; padding:8px 15px; border-radius:100px; color:#1f8a52; background:#e4f5ea; white-space:nowrap; }
+  .status .dot { width:8px; height:8px; border-radius:50%; background:#26a35f; animation:blink 1.6s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+  .status.soon { color:#9a6b00; background:#fbf0d4; }
+  .status.soon .dot { background:#e0a93b; animation:none; }
+
+  details.faq { border-bottom:1px solid var(--line); }
+  details.faq summary { list-style:none; cursor:pointer; padding:24px 0; display:flex; justify-content:space-between; align-items:center; gap:20px; font-weight:700; font-size:clamp(18px,2vw,21px); color:var(--ink); }
+  details.faq summary::-webkit-details-marker { display:none; }
+  details.faq summary .pm { flex:none; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:all .3s var(--ease); color:var(--blue-deep); background:var(--blue-soft); }
+  details[open].faq summary .pm { transform:rotate(45deg); color:#fff; background:var(--blue); }
+  details.faq .ans { color:var(--body); padding:0 50px 26px 0; max-width:70ch; }
+  @media (max-width:600px){
+    .trial { grid-template-columns:1fr; gap:18px; padding:22px; }
+    .trial > div:last-child { flex-direction:row !important; align-items:center !important; justify-content:space-between; }
+    .trial .btn { width:auto; }
+  }
+</style>
+</head>
+<body data-page="patients">
+<div id="site-header"></div>
+
+<section class="page-hero" data-screen-label="Patients hero">
+  <div class="wrap">
+    <span class="eyebrow reveal in"><span data-es="Para Pacientes y Voluntarios">For Patients &amp; Volunteers</span></span>
+    <h1 class="display reveal in" data-d="1" style="margin-top:22px; max-width:17ch;"><span data-es="Sea parte de la medicina del mañana.">Be part of tomorrow's medicine.</span></h1>
+    <p class="lead reveal in" data-d="2"><span data-es="Los voluntarios de ensayos clínicos ayudan a llevar nuevos tratamientos a quienes los necesitan, y a menudo obtienen acceso a una atención de vanguardia y un seguimiento médico cercano en el camino.">Clinical trial volunteers help bring new treatments to the people who need them — often gaining access to leading care and close medical attention along the way.</span></p>
+    <div class="reveal in" data-d="3" style="margin-top:34px;">
+      <a class="btn btn-primary no-circle" href="contact.html"><span data-es="Vea si califica">See if you qualify</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- why participate -->
+<section class="section section--tight" data-screen-label="Why participate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-es="Por qué participar">Why participate</span></span>
+      <h2 class="title" style="margin-top:22px;"><span data-es="Razones reales por las que la gente es voluntaria.">Real reasons people volunteer.</span></h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7z"/><path d="M8 8l8 8"/></svg></div><h3><span data-es="Acceso a nuevas opciones">Access to new options</span></h3><p><span data-es="Tratamientos en investigación y un monitoreo cercano por parte de un equipo de investigación experimentado, a menudo antes de que estén ampliamente disponibles.">Investigational treatments and close monitoring by an experienced research team, often before they're widely available.</span></p></div>
+      <div class="card green reveal" data-d="1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a5 5 0 0 0 10 0V3"/><path d="M4 3h3"/><path d="M15 3h3"/><path d="M11 14v5a4 4 0 0 0 8 0v-3"/><circle cx="19" cy="14" r="2"/></svg></div><h3><span data-es="Atención dedicada">Attentive care</span></h3><p><span data-es="Visitas frecuentes, evaluaciones exhaustivas y un coordinador que lo conoce por su nombre durante todo el estudio.">Frequent visits, thorough assessments, and a coordinator who knows you by name throughout the study.</span></p></div>
+      <div class="card reveal" data-d="2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19h12"/><path d="M9 19a6 6 0 0 0 6-6"/><path d="M11 4l4 4-2.5 2.5-4-4z"/><path d="M8.5 6.5 7 8"/><path d="M4 22h16"/></svg></div><h3><span data-es="Avanzar la ciencia">Advancing science</span></h3><p><span data-es="Su participación contribuye a una investigación que puede ayudar a su comunidad y a los futuros pacientes de todas partes.">Your participation contributes to research that may help your community and future patients everywhere.</span></p></div>
+    </div>
+    <p class="muted reveal" style="margin-top:24px; font-size:14px; max-width:70ch;"><span data-es="Puede haber compensación por tiempo y traslado en los estudios elegibles. La participación es siempre voluntaria y puede retirarse en cualquier momento.">Compensation for time and travel may be available for eligible studies. Participation is always voluntary, and you may withdraw at any time.</span></p>
+  </div>
+</section>
+
+<!-- enrolling now -->
+<section class="section" style="background:var(--surface);" data-screen-label="Active trials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-es="Estudios activos">Active studies</span></span>
+      <h2 class="title" style="margin-top:22px;"><span data-es="Inscribiendo ahora.">Enrolling now.</span></h2>
+      <p><span data-es="Un resumen de las oportunidades actuales. La elegibilidad se determina durante una visita de selección confidencial.">A snapshot of current opportunities. Eligibility is determined during a confidential screening visit.</span></p>
+    </div>
+    <div class="grid" style="gap:16px;">
+      <div class="trial reveal"><div><span class="area"><span data-es="Metabólico · Diabetes Tipo 2">Metabolic · Type 2 Diabetes</span></span><h3><span data-es="Terapia en investigación para el control del azúcar en sangre">Investigational therapy for blood-sugar control</span></h3><p><span data-es="Adultos de 18 a 75 años con Diabetes Tipo 2 no totalmente controlada con su medicación actual.">Adults 18–75 with Type 2 Diabetes not fully controlled on current medication.</span></p></div><div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;"><span class="status"><span class="dot"></span><span data-es="Inscribiendo">Enrolling</span></span><a class="btn btn-ghost" href="contact.html"><span data-es="Me interesa">I'm interested</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a></div></div>
+      <div class="trial reveal"><div><span class="area"><span data-es="Cardiología · Hipertensión">Cardiology · Hypertension</span></span><h3><span data-es="Nuevo enfoque para la presión arterial alta resistente">New approach to resistant high blood pressure</span></h3><p><span data-es="Adultos con presión arterial elevada a pesar de dos o más medicamentos.">Adults with elevated blood pressure despite two or more medications.</span></p></div><div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;"><span class="status"><span class="dot"></span><span data-es="Inscribiendo">Enrolling</span></span><a class="btn btn-ghost" href="contact.html"><span data-es="Me interesa">I'm interested</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a></div></div>
+      <div class="trial reveal"><div><span class="area"><span data-es="Obesidad · Control de Peso">Obesity · Weight Management</span></span><h3><span data-es="Estudio de medicación para el control crónico del peso">Medication study for chronic weight management</span></h3><p><span data-es="Adultos con un IMC de 30+ (o 27+ con una afección relacionada) que buscan nuevas opciones.">Adults with a BMI of 30+ (or 27+ with a related condition) seeking new options.</span></p></div><div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;"><span class="status"><span class="dot"></span><span data-es="Inscribiendo">Enrolling</span></span><a class="btn btn-ghost" href="contact.html"><span data-es="Me interesa">I'm interested</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a></div></div>
+      <div class="trial reveal"><div><span class="area"><span data-es="Vacunas · Enfermedades Infecciosas">Vaccines · Infectious Disease</span></span><h3><span data-es="Evaluación de refuerzo de vacuna preventiva">Preventive vaccine booster evaluation</span></h3><p><span data-es="Adultos sanos interesados en contribuir a la investigación de vacunas.">Healthy adults interested in contributing to vaccine research.</span></p></div><div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;"><span class="status soon"><span class="dot"></span><span data-es="Próximamente">Starting soon</span></span><a class="btn btn-ghost" href="contact.html"><span data-es="Unirse a la lista de espera">Join waitlist</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" data-screen-label="FAQ">
+  <div class="wrap" style="max-width:880px;">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span data-es="Preguntas, respondidas">Questions, answered</span></span>
+      <h2 class="title" style="margin-top:22px;"><span data-es="Qué esperar.">What to expect.</span></h2>
+    </div>
+    <div class="reveal">
+      <details class="faq"><summary><span data-es="¿Es seguro participar en un ensayo clínico?">Is participating in a clinical trial safe?</span><span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="ans"><span data-es="Cada ensayo sigue un protocolo estricto revisado por una Junta de Revisión Institucional (IRB) y supervisado por personal médico experimentado. Su seguridad se monitorea en cada visita y recibirá información detallada sobre los posibles riesgos y beneficios antes de decidir participar.">Every trial follows a strict protocol reviewed by an Institutional Review Board (IRB) and overseen by experienced medical staff. Your safety is monitored at every visit, and you'll receive detailed information about potential risks and benefits before you decide to join.</span></div></details>
+      <details class="faq"><summary><span data-es="¿Tiene algún costo para mí?">Will it cost me anything?</span><span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="ans"><span data-es="Las visitas relacionadas con el estudio, las evaluaciones y el tratamiento en investigación se brindan sin costo para los participantes en la mayoría de los ensayos. Muchos estudios también ofrecen compensación por su tiempo y traslado. Los detalles se explican durante la selección.">Study-related visits, assessments, and the investigational treatment are provided at no cost to participants in most trials. Many studies also offer compensation for your time and travel. Specifics are explained during screening.</span></div></details>
+      <details class="faq"><summary><span data-es="¿Qué sucede durante la selección?">What happens during screening?</span><span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="ans"><span data-es="Un coordinador revisa su historial médico y los requisitos del estudio, responde sus preguntas y realiza evaluaciones de elegibilidad. No hay ninguna obligación: la selección simplemente ayuda a determinar si un estudio es adecuado para usted.">A coordinator reviews your medical history and the study requirements, answers your questions, and performs eligibility assessments. There's no obligation — screening simply helps determine whether a study is a good fit for you.</span></div></details>
+      <details class="faq"><summary><span data-es="¿Puedo abandonar un estudio después de comenzar?">Can I leave a study after I start?</span><span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="ans"><span data-es="Sí. La participación es completamente voluntaria y puede retirarse en cualquier momento, por cualquier motivo, sin que afecte su atención médica habitual.">Yes. Participation is entirely voluntary and you may withdraw at any time, for any reason, without affecting your regular medical care.</span></div></details>
+      <details class="faq"><summary><span data-es="¿Ofrecen servicios en español?">Do you offer services in Spanish?</span><span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="ans"><span data-es="Por supuesto. Nuestro equipo es bilingüe, y los materiales de consentimiento y las visitas del estudio pueden realizarse en inglés o español. Hablamos español.">Absolutely. Our team is bilingual, and consent materials and study visits can be conducted in English or Spanish. Hablamos español.</span></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- testimonial -->
+<section class="section" style="background:var(--surface);" data-screen-label="Testimonial">
+  <div class="wrap split">
+    <div class="reveal">
+      <img class="photo" src="img/patientM.png" alt="Trial participant in Miami" style="width:100%; aspect-ratio:4/4.2; border-radius:28px;">
+    </div>
+    <div class="reveal" data-d="1">
+      <span class="eyebrow"><span data-es="De nuestros participantes">From our participants</span></span>
+      <div class="quote-mark" style="margin-top:18px">“</div>
+      <p class="lead" style="margin-top:-18px"><span data-es="Desde mi primera llamada hasta mi última visita, el equipo me explicó todo con claridad y me trató como de la familia. Nunca me sentí como un número: me sentí cuidada.">From my first call to my last visit, the team explained everything clearly and treated me like family. I never felt like a number — I felt cared for.</span></p>
+      <div style="margin-top:24px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+        <img class="photo" src="img/patientM.png" alt="Participant" style="width:52px; height:52px; border-radius:50%;">
+        <div>
+          <div class="tm-name">Rosa M.</div>
+          <div class="tm-role"><span data-es="Participante de estudio de cardiología · Miami">Cardiology study participant · Miami</span></div>
+        </div>
+        <div class="tm-stars" style="margin-left:auto;">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="glow"></div>
+      <div style="position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap;">
+        <div style="max-width:600px;">
+          <span class="eyebrow"><span data-es="Dé el primer paso">Take the first step</span></span>
+          <h2 class="title" style="margin-top:18px;"><span data-es="Descubra si un estudio es adecuado para usted.">Find out if a study is right for you.</span></h2>
+          <p class="lead" style="margin-top:14px;"><span data-es="Comienza con una conversación rápida y confidencial. Sin compromiso.">It starts with a quick, confidential conversation. No commitment.</span></p>
+        </div>
+        <a class="btn btn-primary" href="contact.html"><span data-es="Vea si califica">See if you qualify</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/i18n.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
