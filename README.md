@@ -2,7 +2,7 @@
 
 Marketing website for **Vital Care Research**, a multispecialty clinical research center in Miami, FL. Static, dependency‑free, fully responsive, and bilingual (English / Spanish).
 
-**Live preview:** deploy to Vercel (see below).
+**Production:** hosted on [Cloudflare Pages](https://pages.cloudflare.com) from `vitalcareresearch/website` (see below).
 
 ---
 
@@ -35,7 +35,8 @@ Marketing website for **Vital Care Research**, a multispecialty clinical researc
 ├── video/
 │   ├── hero.mp4            # DNA hero background loop
 │   └── office-tour.mp4     # Office walkthrough
-├── vercel.json             # Static hosting config (clean URLs, cache headers)
+├── _headers                # Cloudflare Pages cache headers
+├── vercel.json             # Legacy Vercel config (unused in production)
 └── .gitignore
 ```
 
@@ -81,14 +82,37 @@ Helpful tips:
 
 ---
 
-## ▲ Deploy to Vercel
+## Repos & deploy workflow
 
-1. Push this repo to GitHub (see below).
-2. Go to [vercel.com/new](https://vercel.com/new) and **Import** `janselazo/vitalcareresearch`.
-3. Framework preset: **Other** · Build command: **(none)** · Output directory: **`./`** (root).
-4. Click **Deploy**. Every push to `main` auto‑deploys.
+| Repo | Role |
+|---|---|
+| `janselazo/vitalcareresearch` | **Dev** — edit here in Cursor |
+| `vitalcareresearch/website` | **Production** — Cloudflare Pages watches this repo |
 
-`vercel.json` already enables clean URLs (`/about` instead of `/about.html`) and long‑cache headers for images/video.
+**Flow:** push to dev `main` → GitHub Action mirrors to client repo → Cloudflare auto-deploys.
+
+### Development
+
+1. Clone and work in `janselazo/vitalcareresearch`.
+2. Push to `main`. The workflow in `.github/workflows/mirror-to-client.yml` syncs to `vitalcareresearch/website`.
+3. Requires `CLIENT_REPO_TOKEN` secret on the dev repo (GitHub PAT with push access to the client repo).
+
+### Production — Cloudflare Pages (one-time setup)
+
+1. Sign up or log in at [dash.cloudflare.com](https://dash.cloudflare.com).
+2. **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → GitHub.
+3. Grant access to the **`vitalcareresearch`** org and select repo **`vitalcareresearch/website`**.
+4. Build settings:
+   - **Production branch:** `main`
+   - **Framework preset:** None
+   - **Build command:** *(leave empty)*
+   - **Build output directory:** `/` (root)
+5. **Save and Deploy**. Note the `*.pages.dev` URL.
+6. Later: **Custom domains** in the Pages project to attach the client domain.
+
+`_headers` sets long-cache headers for images and video. Cloudflare Pages serves clean URLs automatically (`/about` for `about.html`).
+
+If Cloudflare cannot see the client repo during setup, go to GitHub **Settings → Applications → Cloudflare Pages** and grant access to `vitalcareresearch/website`.
 
 ---
 
@@ -96,7 +120,7 @@ Helpful tips:
 
 - **Photography & video** are AI‑generated stand‑ins built to match the real facility. Swap any file in `img/` or `video/` (keep the same filename) to drop in real assets — no code changes needed.
 - **Stats, partner names, and testimonials** are illustrative — replace with real figures.
-- **Contact form** is front‑end only (validates + shows a success state). Wire the submit handler in `contact.html` to your email service / CRM (e.g. Formspree, a serverless function, or your backend) to receive submissions.
+- **Contact form** submits via [Web3Forms](https://web3forms.com) from `contact.html` (client-side). Confirm the access key and inbox before launch.
 - **Address & phone** (3399 NW 72nd Ave, Suite 219, Miami, FL 33122 · (786) 280‑1178) and the footer email are placeholders where noted — confirm before launch.
 
 ---
