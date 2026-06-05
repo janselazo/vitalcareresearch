@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact — Vital Care Research</title>
 <meta name="description" content="Contact Vital Care Research in Miami, FL. Volunteer for a study, refer a patient, or partner with us as a sponsor. Call (786) 280-1178.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231f3d34'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='7'%3E%3Ccircle cx='40' cy='38' r='29'/%3E%3C/g%3E%3Crect x='55' y='58' width='10.5' height='34' rx='5.25' transform='rotate(-45 60 75)' fill='%23ffffff'/%3E%3Cpolyline points='22,17 39,53 48,33 51,39 55,18 59,30' fill='none' stroke='%231f77df' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -111,7 +111,7 @@
               </div>
             </div>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+            <div class="form-row">
               <div class="field"><label for="name"><span data-es="Nombre completo">Full name</span> <span class="req">*</span></label><input type="text" id="name" name="name" autocomplete="name"><div class="err-msg" data-for="name"><span data-es="Por favor, ingrese su nombre.">Please enter your name.</span></div></div>
               <div class="field"><label for="phone"><span data-es="Teléfono">Phone</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(786) 000-0000"></div>
             </div>
@@ -154,6 +154,7 @@
 <div id="site-footer"></div>
 <script src="assets/i18n.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/chatbot.js"></script>
 <script>
 (function(){
   var form = document.getElementById('contactForm');

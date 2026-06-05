@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vital Care Research — Clinical Trials in Miami, FL</title>
 <meta name="description" content="Vital Care Research is an experienced, patient-centered clinical research center in Miami, FL, conducting Phase I–IV trials across multiple therapeutic areas.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231a1d24'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='7'%3E%3Ccircle cx='40' cy='38' r='29'/%3E%3C/g%3E%3Crect x='55' y='58' width='10.5' height='34' rx='5.25' transform='rotate(-45 60 75)' fill='%23ffffff'/%3E%3Cpolyline points='22,17 39,53 48,33 51,39 55,18 59,30' fill='none' stroke='%232f56ec' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -58,9 +58,11 @@
   .hero--video .hero-content::before { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: min(1100px, 96%); height: 118%; z-index: -1; background: radial-gradient(ellipse at center, rgba(8,12,26,0.66) 0%, rgba(8,12,26,0.28) 45%, transparent 72%); pointer-events: none; }
   .hero--video .hero-content { position: relative; z-index: 2; max-width: 1060px; margin: 0 auto; padding: clamp(96px,14vh,150px) var(--pad) clamp(60px,9vh,96px); text-align: center; }
   .hero-kicker { display: inline-block; color: #a8c4ff; font-weight: 700; letter-spacing: 0.05em; font-size: clamp(13px,1.4vw,16px); margin-bottom: 22px; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
-  .hero-title { color: #fff; font-size: clamp(40px,6.4vw,84px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
+  .hero-title { color: #fff; font-size: clamp(40px,6.4vw,84px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; text-shadow: 0 2px 24px rgba(0,0,0,0.55); text-align: center; }
   .hero-line2 { white-space: nowrap; }
-  @media (max-width: 600px) { .hero-line2 { white-space: normal; } }
+  @media (max-width: 900px) { .hero-line2 { white-space: normal; } }
+  html[lang="es"] .hero-title { font-size: clamp(34px,5.2vw,72px); letter-spacing: -0.02em; line-height: 1.08; }
+  html[lang="es"] .hero-line2 { white-space: normal; }
   .hero-accent { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 600; color: #bcd0ff; letter-spacing: 0; }
   .hero-sub { color: rgba(255,255,255,0.94); font-size: clamp(17px,1.7vw,22px); line-height: 1.55; max-width: 60ch; margin: 26px auto 0; text-shadow: 0 1px 14px rgba(0,0,0,0.55); }
   .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 38px; }
@@ -73,17 +75,20 @@
 
   /* hero mobile */
   @media (max-width: 760px) {
-    .hero.hero--video { min-height: 88vh; }
+    .hero.hero--video { min-height: 88vh; min-height: 88dvh; }
     .hero--video .hero-content { padding: clamp(70px,16vh,110px) var(--pad) clamp(44px,8vh,64px); }
-    .hero-kicker { margin-bottom: 16px; font-size: 12px; }
+    .hero-kicker { margin-bottom: 16px; font-size: 12px; max-width: 34ch; margin-inline: auto; line-height: 1.45; }
     .hero-title { font-size: clamp(34px,9vw,46px); line-height: 1.06; }
+    html[lang="es"] .hero-title { font-size: clamp(28px,8vw,40px); }
     .hero-sub { font-size: 16.5px; margin-top: 18px; }
     .hero-actions { margin-top: 28px; gap: 11px; }
     .hero-actions .btn { width: 100%; justify-content: center; }
     .hero-stats { gap: 22px 18px; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; max-width: 360px; margin-inline: auto; }
     .hero-stat { text-align: center; }
     .hero-stat .v { font-size: 30px; }
-    .hero-stat .l { font-size: 11px; }
+    .hero-stat .l { font-size: 11px; word-break: break-word; }
+    .facility .pin { white-space: normal; }
+    .tour .cap { font-size: 13px; padding: 14px; max-width: calc(100% - 28px); }
   }
 </style>
 </head>
@@ -101,8 +106,8 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-kicker reveal in"><span data-es="Centro de Investigación Clínica Multiespecialidad · Miami, FL">Multispecialty Clinical Research Center · Miami, FL</span></span>
-    <h1 class="hero-title reveal in" data-d="1"><span data-es="Avanzando la medicina,">Advancing Medicine,</span><br><span class="hero-line2"><span data-es="impulsados por el ">Powered by </span><em class="hero-accent" data-es="Descubrimiento">Discovery</em></span></h1>
-    <p class="hero-sub reveal in" data-d="2"><span data-es="Un centro de investigación de Fase I–IV en Miami que conecta a pacientes, médicos y patrocinadores con los tratamientos del mañana — hoy.">A dedicated Phase I–IV research center in Miami connecting patients, physicians, and sponsors with tomorrow's treatments — today.</span></p>
+    <h1 class="hero-title reveal in" data-d="1"><span data-es="Avanzando la medicina,">Advancing Medicine,</span><br><span class="hero-line2" data-es="impulsados por el <em class=&quot;hero-accent&quot;>Descubrimiento</em>">Powered by <em class="hero-accent">Discovery</em></span></h1>
+    <p class="hero-sub reveal in" data-d="2"><span data-es="Un centro de investigación de Fase I–IV en Miami que conecta a pacientes, médicos y patrocinadores con los tratamientos del mañana — <em class=&quot;hero-accent&quot;>hoy</em>.">A dedicated Phase I–IV research center in Miami connecting patients, physicians, and sponsors with tomorrow's treatments — <em class="hero-accent">today</em>.</span></p>
     <div class="hero-actions reveal in" data-d="3">
       <a class="btn btn-primary no-circle" href="patients.html"><span data-es="Quiero Participar">I Want to Participate</span></a>
       <a class="btn btn-glass no-circle" href="sponsors.html"><span data-es="Información para Patrocinadores">Sponsor Information</span></a>
@@ -110,7 +115,7 @@
     </div>
     <div class="hero-stats reveal in" data-d="4">
       <div class="hero-stat"><div class="v">Phase I–IV</div><div class="l"><span data-es="Ensayos Clínicos">Clinical Trials</span></div></div>
-      <div class="hero-stat"><div class="v"><span data-count="15">0</span><span class="suf">+</span></div><div class="l"><span data-es="Años de Experiencia">Years Experience</span></div></div>
+      <div class="hero-stat"><div class="v"><span data-count="5">0</span><span class="suf">+</span></div><div class="l"><span data-es="Años de Experiencia">Years Experience</span></div></div>
       <div class="hero-stat"><div class="v"><span data-count="12500">0</span><span class="suf">+</span></div><div class="l"><span data-es="Base de Sujetos">Subject Database</span></div></div>
       <div class="hero-stat"><div class="v">1–2 <span class="suf">wks</span></div><div class="l"><span data-es="Inicio Regulatorio">Regulatory Startup</span></div></div>
     </div>
@@ -135,13 +140,9 @@
 <section class="section" style="background:var(--surface);" data-screen-label="Who we are">
   <div class="wrap split">
     <div class="reveal">
-      <span class="eyebrow">Who we are</span>
+      <span class="eyebrow"><span data-es="Quiénes somos">Who we are</span></span>
       <h2 class="title" style="margin-top:22px; font-size:clamp(28px,3.6vw,44px)"><span data-es="Un socio que se siente como un vecino.">A research partner that<br>feels like a neighbor.</span></h2>
-      <p class="lead" style="margin-top:18px">
-        From our Miami-Dade facility, our multidisciplinary team manages every phase of the clinical
-        trial lifecycle — feasibility, recruitment, conduct, and close-out — pairing the rigor
-        regulators expect with the warmth patients remember.
-      </p>
+      <p class="lead" style="margin-top:18px"><span data-es="Desde nuestra sede en Miami-Dade, nuestro equipo gestiona cada fase del ciclo de vida del ensayo clínico con el rigor que exigen los reguladores y la calidez que recuerdan los pacientes.">From our Miami-Dade facility, our team manages every phase of the clinical trial lifecycle with the rigor regulators expect and the warmth patients remember.</span></p>
       <ul class="ticks" style="margin-top:28px">
         <li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-es="Investigadores experimentados y coordinadores de estudio certificados">Experienced PIs and certified study coordinators</span></li>
         <li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-es="Comunidad de pacientes diversa y multilingüe del sur de Florida">Diverse, multilingual South-Florida patient community</span></li>
@@ -160,7 +161,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow"><span data-es="Por qué los patrocinadores nos eligen">Why sponsors choose us</span></span>
-      <h2 class="title" style="margin-top:22px"><span data-es="Datos limpios. Inscripción rápida. Cero sorpresas.">Clean data. Fast enrollment. Zero surprises.</span></h2>
+      <h2 class="title" style="margin-top:22px"><span data-es="Inscripción rápida. Cero sorpresas.">Clean data. Fast enrollment. Zero surprises.</span></h2>
       <p><span data-es="Combinamos disciplina operativa con una comunidad profundamente comprometida, para que su protocolo avance según lo previsto y sus datos resistan el escrutinio.">We pair operational discipline with a deeply engaged community, so your protocol moves on schedule and your dataset holds up under scrutiny.</span></p>
     </div>
     <div class="grid grid-3">
@@ -239,22 +240,6 @@
   </div>
 </section>
 
-<!-- ============ FACILITY GALLERY ============ -->
-<section class="section section--tight" style="background:var(--surface);" data-screen-label="Facility gallery">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span data-es="Recorra nuestro espacio">Tour our space</span></span>
-      <h2 class="title" style="margin-top:22px;"><span data-es="Un vistazo a nuestras instalaciones en Miami.">A look inside our Miami facility.</span></h2>
-    </div>
-    <div class="gallery reveal">
-      <figure><img src="img/reception.png" alt="Reception and waiting area"><figcaption><span data-es="Recepción y sala de espera">Reception &amp; waiting</span></figcaption></figure>
-      <figure><img src="img/room.png" alt="On-site laboratory"><figcaption><span data-es="Laboratorio en el sitio">On-site laboratory</span></figcaption></figure>
-      <figure><img src="img/hero.png" alt="Exam and monitoring room"><figcaption><span data-es="Salas de examen y monitoreo">Exam &amp; monitoring rooms</span></figcaption></figure>
-      <figure><img src="img/sponsor.png" alt="Conference room"><figcaption><span data-es="Sala de conferencias">Conference room</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <!-- ============ OFFICE TOUR VIDEO ============ -->
 <section class="section section--tight" style="background:var(--surface);" data-screen-label="Video tour">
   <div class="wrap">
@@ -276,20 +261,18 @@
   </div>
 </section>
 
-<!-- ============ OUR ADDRESS ============ -->
-<section class="section section--tight" data-screen-label="Our address">
+<!-- ============ FACILITY GALLERY ============ -->
+<section class="section section--tight" style="background:var(--surface);" data-screen-label="Facility gallery">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span data-es="Nuestra dirección">Our Address</span></span>
-      <h2 class="title" style="margin-top:22px;"><span data-es="Visítenos en el corazón de Miami-Dade.">Visit us in the heart of Miami-Dade.</span></h2>
+      <span class="eyebrow"><span data-es="Recorra nuestro espacio">Tour our space</span></span>
+      <h2 class="title" style="margin-top:22px;"><span data-es="Un vistazo a nuestras instalaciones en Miami.">A look inside our Miami facility.</span></h2>
     </div>
-    <div class="map-embed reveal" style="aspect-ratio:21/8;">
-      <iframe title="Vital Care Research location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3399%20NW%2072nd%20Ave%20Suite%20219%20Miami%20FL%2033122&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
-      <div class="map-card">
-        <div class="mt">Vital Care Research</div>
-        <div class="ma">3399 NW 72nd Ave, Suite 219<br>Miami, FL 33122</div>
-        <a href="https://maps.google.com/?q=3399+NW+72nd+Ave+Suite+219+Miami+FL+33122" target="_blank" rel="noopener"><span data-es="Abrir en Google Maps">Open in Google Maps</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-      </div>
+    <div class="gallery reveal">
+      <figure><img src="img/reception.png" alt="Reception and waiting area"><figcaption><span data-es="Recepción y sala de espera">Reception &amp; waiting</span></figcaption></figure>
+      <figure><img src="img/room.png" alt="On-site laboratory"><figcaption><span data-es="Laboratorio en el sitio">On-site laboratory</span></figcaption></figure>
+      <figure><img src="img/hero.png" alt="Exam and monitoring room"><figcaption><span data-es="Salas de examen y monitoreo">Exam &amp; monitoring rooms</span></figcaption></figure>
+      <figure><img src="img/sponsor.png" alt="Conference room"><figcaption><span data-es="Sala de conferencias">Conference room</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -298,7 +281,8 @@
 <section class="section section--tight" data-screen-label="Our Miami facility">
   <div class="wrap">
     <div class="sec-head reveal" style="margin-bottom:28px;">
-      <h2 class="title" style="margin-top:16px"><span data-es="Nuestra sede en Miami, Florida">Our home in Miami, Florida</span></h2>
+      <span class="eyebrow"><span data-es="Nuestra dirección">Our Address</span></span>
+      <h2 class="title" style="margin-top:22px"><span data-es="Nuestra sede en Miami, Florida">Our home in Miami, Florida</span></h2>
       <p><span data-es="Un centro moderno y luminoso en el corazón de Miami-Dade, donde nuestro equipo bilingüe recibe a la comunidad cada día.">A bright, modern center in the heart of Miami-Dade, where our bilingual team welcomes the community every day.</span></p>
     </div>
     <div class="facility reveal" data-d="1">
@@ -310,6 +294,23 @@
           <p><span data-es="Salas de examen privadas, laboratorio en el sitio y espacios acogedores, a minutos de toda Miami-Dade.">Private exam rooms, an on-site laboratory, and welcoming spaces — minutes from anywhere in Miami-Dade.</span></p>
         </div>
         <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3399 NW 72nd Ave · Miami, FL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR ADDRESS ============ -->
+<section class="section section--tight" data-screen-label="Our address">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="title" style="margin-top:16px;"><span data-es="Visítenos en el corazón de Miami-Dade.">Visit us in the heart of Miami-Dade.</span></h2>
+    </div>
+    <div class="map-embed reveal" style="aspect-ratio:21/8;">
+      <iframe title="Vital Care Research location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3399%20NW%2072nd%20Ave%20Suite%20219%20Miami%20FL%2033122&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+      <div class="map-card">
+        <div class="mt">Vital Care Research</div>
+        <div class="ma">3399 NW 72nd Ave, Suite 219<br>Miami, FL 33122</div>
+        <a href="https://maps.google.com/?q=3399+NW+72nd+Ave+Suite+219+Miami+FL+33122" target="_blank" rel="noopener"><span data-es="Abrir en Google Maps">Open in Google Maps</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
     </div>
   </div>
@@ -376,6 +377,7 @@
 <div id="site-footer"></div>
 <script src="assets/i18n.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/chatbot.js"></script>
 <script>
 /* Seamless crossfade loop: dissolve the end of one copy into the start of the other. */
 (function () {
