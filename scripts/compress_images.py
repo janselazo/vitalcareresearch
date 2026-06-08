@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1] / "img"
 PNG_FILES = [
     "exterior.png", "reception.png", "conference.png", "office.png",
     "storage.png", "lab.png", "cold-storage.png", "exam.png", "bp.png",
-    "team.png", "pi.png", "dir.png", "coord.png", "patientM.png", "patientW.png",
+    "team.png", "gilberto-jimenez.png", "maria-rodil.png", "patientM.png", "patientW.png",
 ]
 
 
