@@ -3,6 +3,7 @@ name: Mirror to client repo
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   mirror:
@@ -13,10 +14,24 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Validate deploy key
+        env:
+          DEPLOY_KEY: ${{ secrets.CLIENT_REPO_DEPLOY_KEY }}
+        run: |
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "::error::CLIENT_REPO_DEPLOY_KEY secret is missing. See README → Mirror setup."
+            exit 1
+          fi
+
       - name: Push to client repository
         env:
-          CLIENT_TOKEN: ${{ secrets.CLIENT_REPO_TOKEN }}
+          DEPLOY_KEY: ${{ secrets.CLIENT_REPO_DEPLOY_KEY }}
         run: |
           git config --global user.name "mirror-bot"
           git config --global user.email "mirror-bot@users.noreply.github.com"
-          git push "https://x-access-token:${CLIENT_TOKEN}@github.com/vitalcareresearch/website.git" main:main --force
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+          git push git@github.com:vitalcareresearch/website.git main:main --force

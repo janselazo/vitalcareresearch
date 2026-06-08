@@ -94,7 +94,42 @@ Helpful tips:
 
 1. Clone and work in `janselazo/vitalcareresearch`.
 2. Push to `main`. The workflow in `.github/workflows/mirror-to-client.yml` syncs to `vitalcareresearch/website`.
-3. Requires `CLIENT_REPO_TOKEN` secret on the dev repo (GitHub PAT with push access to the client repo).
+3. Requires a **deploy key** secret on the dev repo (see mirror setup below).
+
+### Mirror setup (one-time)
+
+The workflow pushes over SSH using a deploy key. No personal account needs write access to the client repo.
+
+1. **Generate a key pair** (on your machine):
+   ```bash
+   ssh-keygen -t ed25519 -C "vcr-mirror" -f ./vcr_mirror_deploy_key -N ""
+   ```
+
+2. **Add the public key** to the production repo (`vitalcareresearch/website`):
+   - **Settings → Deploy keys → Add deploy key**
+   - Title: `mirror-from-dev`
+   - Key: paste `vcr_mirror_deploy_key.pub`
+   - Enable **Allow write access** → **Add key**
+
+3. **Add the private key** to the dev repo (`janselazo/vitalcareresearch`):
+   - **Settings → Secrets and variables → Actions → New repository secret**
+   - Name: `CLIENT_REPO_DEPLOY_KEY`
+   - Value: paste the full `vcr_mirror_deploy_key` file (including BEGIN/END lines)
+
+4. **Remove local key files** when done:
+   ```bash
+   rm vcr_mirror_deploy_key vcr_mirror_deploy_key.pub
+   ```
+
+5. Push to `main` or run **Actions → Mirror to client repo → Run workflow**.
+
+**Troubleshooting**
+
+| Error | Fix |
+|---|---|
+| `CLIENT_REPO_DEPLOY_KEY secret is missing` | Complete step 3. |
+| `Permission denied (publickey)` | Public key not on client repo, or private key pasted incorrectly. |
+| `Permission denied` with a username | Deploy key missing **Allow write access** on the client repo. |
 
 ### Production — Cloudflare Pages (one-time setup)
 
