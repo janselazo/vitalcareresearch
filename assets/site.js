@@ -27,6 +27,7 @@
   var NAV = [
     { key: "home",     label: "Home",      es: "Inicio",          href: "index.html" },
     { key: "about",    label: "About",     es: "Nosotros",        href: "about.html" },
+    { key: "capabilities", label: "Capabilities", es: "Capacidades", href: "capabilities.html" },
     { key: "sponsors", label: "Sponsors",  es: "Patrocinadores",  href: "sponsors.html" },
     { key: "patients", label: "Patients",  es: "Pacientes",       href: "patients.html" },
     { key: "contact",  label: "Contact",   es: "Contacto",        href: "contact.html" }
@@ -113,6 +114,7 @@
             <h4 data-es="Explorar">Explore</h4>
             <ul>
               <li><a href="about.html" data-es="Nosotros">About Us</a></li>
+              <li><a href="capabilities.html" data-es="Capacidades">Capabilities</a></li>
               <li><a href="sponsors.html" data-es="Para Patrocinadores">For Sponsors</a></li>
               <li><a href="patients.html" data-es="Para Pacientes">For Patients</a></li>
               <li><a href="contact.html" data-es="Contacto">Contact</a></li>
@@ -124,7 +126,7 @@
               <li><a href="sponsors.html" data-es="Ensayos Fase II–IV">Phase II–IV Trials</a></li>
               <li><a href="patients.html" data-es="Áreas Terapéuticas">Therapeutic Areas</a></li>
               <li><a href="patients.html" data-es="Estudios Activos">Active Studies</a></li>
-              <li><a href="about.html" data-es="Nuestras Instalaciones">Our Facility</a></li>
+              <li><a href="capabilities.html" data-es="Nuestras Instalaciones">Our Facility</a></li>
             </ul>
           </div>
           <div>

@@ -8,7 +8,7 @@ Marketing website for **Vital Care Research**, a multispecialty clinical researc
 
 ## ✨ What's inside
 
-- **5 pages** — Home (`index.html`), About (`about.html`), For Sponsors (`sponsors.html`), For Patients (`patients.html`), Contact (`contact.html`)
+- **6 pages** — Home (`index.html`), About (`about.html`), Capabilities (`capabilities.html`), For Sponsors (`sponsors.html`), For Patients (`patients.html`), Contact (`contact.html`)
 - **Bilingual** EN/ES toggle (flag switch in the nav) — persists across pages via `localStorage`
 - **Cinematic video hero** (animated DNA background) + a real **office‑tour video**
 - **Animated medical icons**, scroll‑reveal sections, animated stat counters
@@ -24,6 +24,7 @@ Marketing website for **Vital Care Research**, a multispecialty clinical researc
 .
 ├── index.html              # Home (video hero, gallery, tour, map, FAQ)
 ├── about.html              # About, values, facility, team, credentials
+├── capabilities.html       # On-site equipment, cold storage, clinical rooms
 ├── sponsors.html           # Capabilities, performance, process
 ├── patients.html           # Why participate, active studies, FAQ
 ├── contact.html            # Validated join‑a‑study form + map
