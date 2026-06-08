@@ -48,9 +48,9 @@
             <ul class="nav-links" id="navlinks">${links}</ul>
           </nav>
           <div class="nav-right">
-            <a class="nav-phone" href="tel:+17862801178">
+            <a class="nav-phone" href="tel:+13052641165">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (786) 280-1178
+              (305) 264-1165
             </a>
             <a class="btn btn-primary nav-cta" href="contact.html"><span data-es="Unirse a un Estudio">Join a Study</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
             <span id="lang-host"></span>
@@ -105,8 +105,8 @@
             <div class="footer-social">
               <a href="https://facebook.com/vitalcareresearch" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
               <a href="https://instagram.com/vitalcareresearch" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-              <a href="tel:+17862801178" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
-              <a href="mailto:vitalcareresearch@gmail.com" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 6 9-6"/></svg></a>
+              <a href="tel:+13052641165" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+              <a href="mailto:contact@vitalcareresearch.com" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 6 9-6"/></svg></a>
             </div>
           </div>
           <div>
@@ -121,7 +121,7 @@
           <div>
             <h4 data-es="Capacidades">Capabilities</h4>
             <ul>
-              <li><a href="sponsors.html" data-es="Ensayos Fase I–IV">Phase I–IV Trials</a></li>
+              <li><a href="sponsors.html" data-es="Ensayos Fase II–IV">Phase II–IV Trials</a></li>
               <li><a href="patients.html" data-es="Áreas Terapéuticas">Therapeutic Areas</a></li>
               <li><a href="patients.html" data-es="Estudios Activos">Active Studies</a></li>
               <li><a href="about.html" data-es="Nuestras Instalaciones">Our Facility</a></li>
@@ -131,7 +131,7 @@
             <h4 data-es="Visítenos">Visit Us</h4>
             <ul>
               <li><a href="https://maps.google.com/?q=3399+NW+72nd+Ave+Suite+219+Miami+FL+33122" target="_blank" rel="noopener">3399 NW 72nd Ave, Suite 219<br>Miami, FL 33122</a></li>
-              <li><a href="tel:+17862801178">(786) 280-1178</a></li>
+              <li><a href="tel:+13052641165">(305) 264-1165</a></li>
               <li><a href="contact.html" data-es="Referir un paciente">Refer a patient</a></li>
             </ul>
           </div>

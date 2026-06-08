@@ -4,9 +4,9 @@
 (function () {
   "use strict";
 
-  var PHONE = "(786) 280-1178";
-  var PHONE_TEL = "tel:+17862801178";
-  var EMAIL = "vitalcareresearch@gmail.com";
+  var PHONE = "(305) 264-1165";
+  var PHONE_TEL = "tel:+13052641165";
+  var EMAIL = "contact@vitalcareresearch.com";
   var ADDRESS = "3399 NW 72nd Ave, Suite 219, Miami, FL 33122";
 
   var KNOWLEDGE = [
@@ -52,8 +52,8 @@
     },
     {
       keywords: ["phase", "fase", "i-iv", "i–iv"],
-      en: "Vital Care Research conducts Phase I–IV clinical trials across multiple therapeutic areas from our Miami-Dade facility.",
-      es: "Vital Care Research realiza ensayos clínicos de Fase I–IV en múltiples áreas terapéuticas desde nuestra sede en Miami-Dade."
+      en: "Vital Care Research conducts Phase II–IV clinical trials across multiple therapeutic areas from our Miami-Dade facility.",
+      es: "Vital Care Research realiza ensayos clínicos de Fase II–IV en múltiples áreas terapéuticas desde nuestra sede en Miami-Dade."
     },
     {
       keywords: ["therap", "condition", "diabetes", "cardio", "obes", "vacun", "área", "area", "tratam"],
@@ -82,8 +82,8 @@
     },
     {
       keywords: ["about", "who are", "facility", "team", "nosotros", "quiénes", "quienes", "instalac", "equipo"],
-      en: "Vital Care Research is a multispecialty Phase I–IV clinical research center in Miami. Our bilingual team manages every phase of the trial lifecycle with regulatory rigor and patient-centered care. <a href=\"about.html\">Learn more about us</a>.",
-      es: "Vital Care Research es un centro de investigación clínica multiespecialidad de Fase I–IV en Miami. Nuestro equipo bilingüe gestiona cada fase del ensayo con rigor regulatorio y atención centrada en el paciente. <a href=\"about.html\">Conozca más sobre nosotros</a>."
+      en: "Vital Care Research is a multispecialty Phase II–IV clinical research center in Miami. Our bilingual team manages every phase of the trial lifecycle with regulatory rigor and patient-centered care. <a href=\"about.html\">Learn more about us</a>.",
+      es: "Vital Care Research es un centro de investigación clínica multiespecialidad de Fase II–IV en Miami. Nuestro equipo bilingüe gestiona cada fase del ensayo con rigor regulatorio y atención centrada en el paciente. <a href=\"about.html\">Conozca más sobre nosotros</a>."
     },
     {
       keywords: ["refer", "patient", "doctor", "physician", "referir", "médico", "medico"],
@@ -92,8 +92,8 @@
     },
     {
       keywords: ["study", "studies", "trial", "active", "estudio", "ensayo"],
-      en: "We run active Phase I–IV studies across many therapeutic areas. Visit <a href=\"patients.html\">For Patients</a> to learn more, or <a href=\"contact.html\">join a study</a> and we'll match you with eligible trials.",
-      es: "Realizamos estudios activos de Fase I–IV en muchas áreas terapéuticas. Visite <a href=\"patients.html\">Para Pacientes</a> para más información, o <a href=\"contact.html\">únase a un estudio</a> y le ayudaremos a encontrar ensayos elegibles."
+      en: "We run active Phase II–IV studies across many therapeutic areas. Visit <a href=\"patients.html\">For Patients</a> to learn more, or <a href=\"contact.html\">join a study</a> and we'll match you with eligible trials.",
+      es: "Realizamos estudios activos de Fase II–IV en muchas áreas terapéuticas. Visite <a href=\"patients.html\">Para Pacientes</a> para más información, o <a href=\"contact.html\">únase a un estudio</a> y le ayudaremos a encontrar ensayos elegibles."
     },
     {
       keywords: ["contact", "reach", "touch", "contac", "comunic"],

@@ -157,7 +157,7 @@ If Cloudflare cannot see the client repo during setup, go to GitHub **Settings �
 - **Photography & video** are AI‑generated stand‑ins built to match the real facility. Swap any file in `img/` or `video/` (keep the same filename) to drop in real assets — no code changes needed.
 - **Stats, partner names, and testimonials** are illustrative — replace with real figures.
 - **Contact form** submits via [Web3Forms](https://web3forms.com) from `contact.html` (client-side). Confirm the access key and inbox before launch.
-- **Address & phone** (3399 NW 72nd Ave, Suite 219, Miami, FL 33122 · (786) 280‑1178) and the footer email are placeholders where noted — confirm before launch.
+- **Address & phone** (3399 NW 72nd Ave, Suite 219, Miami, FL 33122 · (305) 264-1165) and the footer email are placeholders where noted — confirm before launch.
 
 ---
 
