@@ -123,6 +123,8 @@ The workflow pushes over SSH using a deploy key. No personal account needs write
 
 5. Push to `main` or run **Actions → Mirror to client repo → Run workflow**.
 
+The workflow only runs on **`janselazo/vitalcareresearch`**. It is copied to the client repo by the mirror but skips itself there — the client repo is deploy-only (Cloudflare watches it).
+
 **Troubleshooting**
 
 | Error | Fix |
