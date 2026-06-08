@@ -18,7 +18,9 @@
   .facility .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(24px,4vw,44px); color: #fff; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
   .facility .cap h3 { color: #fff; font-size: clamp(22px,3vw,34px); }
   .facility .cap p { color: rgba(255,255,255,0.86); margin: 8px 0 0; max-width: 46ch; font-size: 15.5px; }
-  .facility .pin { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.16); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.28); padding: 10px 16px; border-radius: 100px; white-space: nowrap; }
+  .facility .pin { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.16); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.28); padding: 10px 16px; border-radius: 100px; white-space: nowrap; color: #fff; text-decoration: none; transition: background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease); }
+  .facility .pin:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.42); transform: translateY(-1px); }
+  .facility .pin:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
   .facility .pin svg { width: 16px; height: 16px; }
 
   /* minimalist Miami sun + palm motif */
@@ -289,9 +291,9 @@
       <h2 class="title" style="margin-top:22px;"><span data-es="Recorra nuestra oficina en Miami.">Take a tour of our Miami office.</span></h2>
     </div>
     <div class="tour reveal" id="officeTour">
-      <img class="poster" src="img/office-tour-poster.jpg?v=20" alt="Office tour preview">
+      <img class="poster" src="img/office-tour-poster.jpg?v=24" alt="Office tour preview">
       <div class="scrim"></div>
-      <video id="officeTourVid" playsinline preload="none" poster="img/office-tour-poster.jpg?v=20">
+      <video id="officeTourVid" playsinline preload="none" poster="img/office-tour-poster.jpg?v=24">
         <source src="video/vitalcare_office_video.mp4" type="video/mp4">
       </video>
       <button class="playbtn" id="officeTourBtn" aria-label="Play office tour">
@@ -337,7 +339,7 @@
           <h3><span data-es="Diseñado para la comodidad y el cuidado">Designed for comfort and care</span></h3>
           <p><span data-es="Salas de examen privadas, laboratorio en el sitio y espacios acogedores, a minutos de toda Miami-Dade.">Private exam rooms, an on-site laboratory, and welcoming spaces — minutes from anywhere in Miami-Dade.</span></p>
         </div>
-        <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3399 NW 72nd Ave · Miami, FL</span>
+        <a class="pin" href="https://maps.google.com/?q=3399+NW+72nd+Ave+Suite+219+Miami+FL+33122" target="_blank" rel="noopener" aria-label="Open Vital Care Research in Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3399 NW 72nd Ave · Miami, FL</a>
       </div>
     </div>
   </div>
@@ -364,16 +366,16 @@
 <section class="section" style="background:var(--surface);" data-screen-label="Testimonial">
   <div class="wrap split">
     <div class="reveal">
-      <img class="photo" src="img/patientW.png" alt="Study participant" style="width:100%; aspect-ratio:4/4.2; border-radius:28px;">
+      <img class="photo" src="img/patientM.png?v=23" alt="Study participant in a Vital Care Research exam room" style="width:100%; aspect-ratio:4/4.2; border-radius:28px;">
     </div>
     <div class="reveal" data-d="1">
       <span class="eyebrow"><span data-es="De nuestros participantes">From our participants</span></span>
       <div class="quote-mark" style="margin-top:18px">“</div>
-      <p class="lead" style="margin-top:-18px"><span data-es="Desde mi primera llamada hasta mi última visita, el equipo me explicó todo con claridad y me trató como de la familia. Nunca me sentí como un número: me sentí cuidada.">From my first call to my last visit, the team explained everything clearly and treated me like family. I never felt like a number — I felt cared for.</span></p>
+      <p class="lead" style="margin-top:-18px"><span data-es="Desde la selección hasta mi última visita, el equipo me guió en cada paso con paciencia y claridad. Siempre supe qué esperar y me sentí respetado en todo momento.">From screening through my last visit, the team walked me through every step with patience and clarity. I always knew what to expect and felt respected the whole way.</span></p>
       <div style="margin-top:24px; display:flex; align-items:center; gap:14px;">
-        <img class="photo" src="img/patientW.png" alt="Rosa M." style="width:52px; height:52px; border-radius:50%;">
+        <img class="photo" src="img/patientM.png?v=23" alt="Carlos R." style="width:52px; height:52px; border-radius:50%;">
         <div>
-          <div class="tm-name">Rosa M.</div>
+          <div class="tm-name">Carlos R.</div>
           <div class="tm-role"><span data-es="Participante de estudio de cardiología · Miami">Cardiology study participant · Miami</span></div>
         </div>
         <div style="margin-left:auto; color:#f5b53d; font-size:18px; letter-spacing:2px;">★★★★★</div>
