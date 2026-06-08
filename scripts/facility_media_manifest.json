@@ -1,0 +1,26 @@
+{
+  "provider": "higgsfield_nano_banana_pro",
+  "workspace_id": "a1ae2db6-dc3c-4b79-9987-56eb2a20a5b4",
+  "generated_at": "2026-06-08",
+  "media": {
+    "V1-exterior.png": "95cfa2c6-7eb3-42f1-8f46-a12fbd390f3f",
+    "V2-reception.png": "1a18a9d7-8c54-4756-860b-fadfe14cd019",
+    "V3-conference.png": "43aea12b-ab3e-478e-bb61-aef3c02cd3e3",
+    "V4-office.png": "5f43ffbf-3ada-4cc6-b93e-03c5c7c7e56f",
+    "V5-storage.png": "ba3424fd-e9f5-4ccf-b9fd-86863c749e5c",
+    "V6-lab.png": "a373ddc5-bd69-4f1e-a6fe-eed3964fa3dc",
+    "V7-cold-storage.png": "bec6c6fe-b3e3-4dd8-a515-24e7fbabc490",
+    "V8-exam.png": "88526e78-e6ee-4db8-a0c2-adcf8cc6c1b4"
+  },
+  "jobs": {
+    "conference": "2c177853-96d1-4ef8-a87c-26553e95e64a",
+    "office": "b4b5f660-5b04-4267-92c8-160f4b3b77d4",
+    "exterior": "b1e06793-e048-4fbb-9c1f-1a7e980d84c8",
+    "team": "cf8af0e8-3e2b-48f2-8c6c-c4003dcf621d",
+    "storage": "5f2bf889-1a38-4acc-8f8d-7e1c2d5d6aab",
+    "lab": "507731e3-1afc-4416-bd2b-93bdc713fe33",
+    "cold-storage": "a30aad26-3552-42d7-bdd0-083ccdaa85cb",
+    "exam": "cbb901a6-dbd0-4174-aa99-5f43ceba984a",
+    "poster": "eb1f8f08-c39e-4541-b587-84933d08d54f"
+  }
+}

@@ -8,14 +8,14 @@ from pathlib import Path
 from PIL import Image, ImageEnhance, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "img" / "source"
+SRC = ROOT / "img" / "source" / "enhanced"
 OUT = ROOT / "img"
 
 STYLE = {
-    "brightness": 1.06,
-    "contrast": 1.08,
-    "color": 1.04,
-    "sharpness": 1.12,
+    "brightness": 1.03,
+    "contrast": 1.05,
+    "color": 1.02,
+    "sharpness": 1.08,
 }
 
 
@@ -78,7 +78,7 @@ def main() -> None:
     export_png("V7-cold-storage.png", "cold-storage.png", ratio_45)
     export_png("V8-exam.png", "exam.png", ratio_45)
     export_png("V8-exam.png", "bp.png", ratio_43)
-    export_png("V4-office.png", "team.png", ratio_45)
+    export_png("V4-team.png", "team.png", ratio_45)
     export_jpg("V2-reception.png", "office-tour-poster.jpg", ratio_169, (1920, 1080))
 
 
