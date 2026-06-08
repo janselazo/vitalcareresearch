@@ -1,4 +1,4 @@
-# Vercel ignores nothing special for static; this keeps the repo clean.
+# Static site — keeps the repo clean.
 
 # OS / editor
 .DS_Store

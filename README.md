@@ -36,7 +36,6 @@ Marketing website for **Vital Care Research**, a multispecialty clinical researc
 │   ├── hero.mp4            # DNA hero background loop
 │   └── office-tour.mp4     # Office walkthrough
 ├── _headers                # Cloudflare Pages cache headers
-├── vercel.json             # Legacy Vercel config (unused in production)
 └── .gitignore
 ```
 
