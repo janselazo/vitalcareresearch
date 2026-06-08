@@ -1,4 +1,8 @@
-# Static site — keeps the repo clean.
+# Mirror deploy keys (never commit)
+vcr_mirror_deploy_key
+vcr_mirror_deploy_key.pub
+*_deploy_key
+*_deploy_key.pub
 
 # OS / editor
 .DS_Store
