@@ -77,9 +77,9 @@ def main() -> None:
     export_png("V6-lab.png", "lab.png", ratio_45)
     export_png("V7-cold-storage.png", "cold-storage.png", ratio_45)
     export_png("V8-exam.png", "exam.png", ratio_45)
-    export_png("V8-exam.png", "bp.png", ratio_43)
+    export_png("V2-reception-waiting.jpg", "bp.png", ratio_43)
     export_png("V4-team.png", "team.png", ratio_45)
-    export_jpg("V2-reception.png", "office-tour-poster.jpg", ratio_169, (1920, 1080))
+    export_jpg("V1-exterior.png", "office-tour-poster.jpg", ratio_169, (1920, 1080))
 
 
 if __name__ == "__main__":
