@@ -491,9 +491,10 @@ body.nav-open::before {
   /* map */
   .map-embed { aspect-ratio: 3/4 !important; }
   .map-card { left: 12px; right: 12px; bottom: 12px; max-width: none; }
-  /* trusted marquee — tighter heading on small screens */
-  .trusted-head-text { font-size: 10px; letter-spacing: 0.12em; max-width: 18ch; text-align: center; line-height: 1.45; }
-  .trusted-head { gap: 12px; }
+  /* trusted marquee — centered heading on small screens */
+  .trusted-head { justify-content: center; gap: 0; }
+  .trusted-head-line { display: none; }
+  .trusted-head-text { font-size: 10px; letter-spacing: 0.12em; max-width: none; width: 100%; text-align: center; line-height: 1.45; white-space: normal; }
   .trusted-logo { font-size: 13px; }
   /* page heroes */
   .page-hero .display { font-size: clamp(34px, 9.5vw, 52px); max-width: none !important; }
