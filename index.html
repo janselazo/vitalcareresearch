@@ -11,11 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <style>
-  /* trusted-by strip */
-  .trusted { display: flex; align-items: center; justify-content: center; gap: clamp(22px, 5vw, 60px); flex-wrap: wrap; }
-  .trusted .lbl { font-size: 13px; font-weight: 600; color: var(--muted); }
-  .trusted .logo-ph { font-weight: 800; font-size: 19px; color: #b9bdc6; letter-spacing: -0.02em; }
-
   /* Miami facility band */
   .facility { position: relative; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow); }
   .facility img { width: 100%; height: clamp(340px, 46vw, 560px); object-fit: cover; display: block; }
@@ -131,11 +126,13 @@
   <div class="wrap">
     <div class="trusted">
       <span class="lbl"><span data-es="La confianza de patrocinadores y CRO en todo el país">Trusted by sponsors &amp; CROs nationwide</span></span>
-      <span class="logo-ph">Pharmavance</span>
-      <span class="logo-ph">NorthBio</span>
-      <span class="logo-ph">Claridyn</span>
-      <span class="logo-ph">Medlevo</span>
-      <span class="logo-ph">Veska</span>
+      <div class="trusted-track" aria-label="Partner organizations">
+        <span class="logo-ph">Pharmavance</span>
+        <span class="logo-ph">NorthBio</span>
+        <span class="logo-ph">Claridyn</span>
+        <span class="logo-ph">Medlevo</span>
+        <span class="logo-ph">Veska</span>
+      </div>
     </div>
   </div>
 </section>
