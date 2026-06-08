@@ -211,14 +211,14 @@ p { margin: 0 0 1em; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); transition: transform .35s var(--ease), box-shadow .35s; position: relative; overflow: hidden; }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 .card .ico { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: var(--blue-soft); color: var(--blue-deep); margin-bottom: 22px; animation: icoFloat 3.6s ease-in-out infinite; }
-.card .ico svg { width: 27px; height: 27px; transform-origin: center; transition: transform .4s var(--ease); animation: icoPulse 2.8s ease-in-out infinite; }
-.card:nth-child(2) .ico svg { animation-delay: .45s; }
-.card:nth-child(3) .ico svg { animation-delay: .9s; }
-.card:nth-child(4) .ico svg { animation-delay: 1.3s; }
-.card:nth-child(5) .ico svg { animation-delay: .6s; }
-.card:nth-child(6) .ico svg { animation-delay: 1.05s; }
+.card .ico svg, .card .ico img { width: 27px; height: 27px; transform-origin: center; transition: transform .4s var(--ease); animation: icoPulse 2.8s ease-in-out infinite; }
+.card:nth-child(2) .ico svg, .card:nth-child(2) .ico img { animation-delay: .45s; }
+.card:nth-child(3) .ico svg, .card:nth-child(3) .ico img { animation-delay: .9s; }
+.card:nth-child(4) .ico svg, .card:nth-child(4) .ico img { animation-delay: 1.3s; }
+.card:nth-child(5) .ico svg, .card:nth-child(5) .ico img { animation-delay: .6s; }
+.card:nth-child(6) .ico svg, .card:nth-child(6) .ico img { animation-delay: 1.05s; }
 .card:hover .ico { animation: none; }
-.card:hover .ico svg { animation-play-state: paused; transform: scale(1.16); }
+.card:hover .ico svg, .card:hover .ico img { animation-play-state: paused; transform: scale(1.16); }
 @keyframes icoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 @keyframes icoPulse { 0%,100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.13) rotate(-2deg); } }
 /* ECG / heartbeat draw */

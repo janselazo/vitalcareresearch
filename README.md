@@ -35,7 +35,7 @@ Marketing website for **Vital Care Research**, a multispecialty clinical researc
 ├── img/                    # Photography, posters, generated backgrounds
 ├── video/
 │   ├── hero.mp4            # DNA hero background loop
-│   └── office-tour.mp4     # Office walkthrough
+│   └── vitalcare_office_video.mp4  # Office walkthrough
 ├── _headers                # Cloudflare Pages cache headers
 └── .gitignore
 ```
