@@ -381,6 +381,8 @@ body.nav-open { overflow: hidden; }
   /* gallery single column on phones */
   .gallery { gap: 14px; grid-template-columns: 1fr; }
   .gallery figure { aspect-ratio: 16/11; }
+  .gallery figcaption { inset: 0; bottom: auto; display: flex; align-items: center; justify-content: center; text-align: center; background: none; text-shadow: 0 1px 12px rgba(0,0,0,0.55); }
+  .gallery figcaption span { display: block; width: 100%; text-align: center; }
   /* page heroes */
   .page-hero .display { font-size: clamp(34px, 9.5vw, 52px); max-width: none !important; }
   /* chips & trusted strip */
