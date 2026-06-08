@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=14">
+<link rel="stylesheet" href="assets/styles.css?v=15">
 <style>
   .values-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
   .value { display:flex; gap:20px; align-items:flex-start; padding:30px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--surface); box-shadow:var(--shadow-sm); transition:transform .3s var(--ease), box-shadow .3s; }
@@ -101,9 +101,8 @@
     </div>
     <div class="gallery reveal">
       <figure><img src="img/exterior.png" alt="Storefront and entrance"><figcaption><span data-es="Fachada y entrada">Storefront &amp; entrance</span></figcaption></figure>
-      <figure><img src="img/reception.png" alt="Reception and waiting area"><figcaption><span data-es="Recepción y sala de espera">Reception &amp; waiting</span></figcaption></figure>
       <figure><img src="img/conference.png" alt="Conference room"><figcaption><span data-es="Sala de conferencias">Conference room</span></figcaption></figure>
-      <figure><img src="img/office.png" alt="Clinical workspace"><figcaption><span data-es="Área clínica">Clinical workspace</span></figcaption></figure>
+      <figure><img src="img/office.png?v=16" alt="Clinical workspace"><figcaption><span data-es="Área clínica">Clinical workspace</span></figcaption></figure>
       <figure><img src="img/storage.png" alt="Supply and storage"><figcaption><span data-es="Suministros y almacén">Supply &amp; storage</span></figcaption></figure>
       <figure><img src="img/lab.png" alt="On-site laboratory"><figcaption><span data-es="Laboratorio en el sitio">On-site laboratory</span></figcaption></figure>
       <figure><img src="img/cold-storage.png" alt="Cold-chain storage"><figcaption><span data-es="Almacenamiento en cadena de frío">Cold-chain storage</span></figcaption></figure>
@@ -115,14 +114,42 @@
 <!-- team -->
 <section class="section" style="background:var(--surface);" data-screen-label="Team">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head sec-head--center reveal">
       <span class="eyebrow"><span data-es="Nuestros médicos">Our physicians</span></span>
       <h2 class="title" style="margin-top:22px;"><span data-es="Liderazgo clínico con experiencia.">Clinical leadership you can trust.</span></h2>
       <p><span data-es="Nuestro equipo médico aporta décadas de experiencia en medicina interna y psiquiatría a la supervisión de protocolos y la atención al participante.">Our medical team brings decades of internal medicine and psychiatry expertise to protocol oversight and participant care.</span></p>
     </div>
-    <div class="spec-grid spec-grid--lead">
-      <div class="reveal"><div class="spec"><img class="fill" src="img/gilberto-jimenez.png" alt="Dr. Gilberto Jimenez, MD"><div class="ov"></div><div class="meta"><h3><span data-es="Dr. Gilberto Jimenez, MD">Dr. Gilberto Jimenez, MD</span></h3><div class="role"><span data-es="Investigador Principal · Medicina Interna">Principal Investigator · Internal Medicine</span></div></div></div><p class="muted" style="margin-top:14px; font-size:14.5px;"><span data-es="Internista en el sur de Florida con más de 20 años de práctica. Graduado del Instituto Superior de Ciencias Médicas de Camagüey. Experiencia clínica en hipertensión, diabetes y artritis, aplicada a la elegibilidad médica, la supervisión de protocolos y la seguridad del participante en ensayos activos.">Internist in South Florida with more than 20 years in practice. Graduate of The Superior Institute of Medical Sciences of Camagüey. Clinical expertise in hypertension, diabetes, and arthritis — applied to medical eligibility, protocol oversight, and participant safety across active trials.</span></p></div>
-      <div class="reveal" data-d="1"><div class="spec"><img class="fill" src="img/maria-rodil.png" alt="Dr. Maria Rodil"><div class="ov"></div><div class="meta"><h3><span data-es="Dra. Maria Rodil">Dr. Maria Rodil</span></h3><div class="role"><span data-es="Directora Médica">Medical Director</span></div></div></div><p class="muted" style="margin-top:14px; font-size:14.5px;"><span data-es="Directora Médica de Peace of Mind Mental Health, Inc., con más de 40 años de experiencia en psiquiatría, especializada en geriatría.">Medical Director for Peace of Mind Mental Health, Inc., with over 40 years of experience in psychiatry, specializing in geriatrics.</span></p></div>
+    <div class="physician-grid">
+      <article class="physician-card reveal">
+        <div class="physician-photo">
+          <img src="img/gilberto-jimenez.png?v=15" alt="Dr. Gilberto Jimenez, MD" width="512" height="512" loading="lazy">
+        </div>
+        <div class="physician-body">
+          <h3><span data-es="Dr. Gilberto Jimenez, MD">Dr. Gilberto Jimenez, MD</span></h3>
+          <p class="physician-role"><span data-es="Investigador Principal · Medicina Interna">Principal Investigator · Internal Medicine</span></p>
+          <p class="physician-lead"><span data-es="Internista en el sur de Florida con más de 20 años de práctica clínica. Graduado del Instituto Superior de Ciencias Médicas de Camagüey.">Internist in South Florida with more than 20 years in clinical practice. Graduate of The Superior Institute of Medical Sciences of Camagüey.</span></p>
+          <ul class="physician-points">
+            <li><span data-es="Hipertensión, diabetes y artritis">Hypertension, diabetes, and arthritis</span></li>
+            <li><span data-es="Elegibilidad médica y supervisión de protocolos">Medical eligibility and protocol oversight</span></li>
+            <li><span data-es="Seguridad del participante en ensayos activos">Participant safety across active trials</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="physician-card reveal" data-d="1">
+        <div class="physician-photo">
+          <img src="img/maria-rodil.png?v=15" alt="Dr. Maria Rodil" width="512" height="512" loading="lazy">
+        </div>
+        <div class="physician-body">
+          <h3><span data-es="Dra. Maria Rodil">Dr. Maria Rodil</span></h3>
+          <p class="physician-role"><span data-es="Directora Médica · Psiquiatría">Medical Director · Psychiatry</span></p>
+          <p class="physician-lead"><span data-es="Directora Médica de Peace of Mind Mental Health, Inc., con más de 40 años de experiencia en psiquiatría clínica.">Medical Director at Peace of Mind Mental Health, Inc., with more than 40 years of clinical psychiatry experience.</span></p>
+          <ul class="physician-points">
+            <li><span data-es="Psiquiatría geriátrica y manejo de medicación">Geriatric psychiatry and medication management</span></li>
+            <li><span data-es="Depresión, ansiedad y trastornos del ánimo">Depression, anxiety, and mood disorders</span></li>
+            <li><span data-es="Atención integrada con equipos de terapia">Integrated care with therapy teams</span></li>
+          </ul>
+        </div>
+      </article>
     </div>
   </div>
 </section>

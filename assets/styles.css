@@ -527,6 +527,72 @@ body.nav-open::before {
 /* ---------- specialist / team cards (shared) ---------- */
 .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .spec-grid--lead { grid-template-columns: repeat(2, 1fr); max-width: 820px; margin-inline: auto; }
+
+/* ---------- physician profile cards ---------- */
+.physician-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 36px);
+  max-width: 980px;
+  margin-inline: auto;
+}
+.physician-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform .35s var(--ease), box-shadow .35s;
+}
+.physician-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.physician-photo {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, #eef1f6, #e4e8ef);
+}
+.physician-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+.physician-body {
+  padding: clamp(22px, 3vw, 30px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.physician-body h3 { margin: 0; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--ink); }
+.physician-role {
+  margin: 8px 0 14px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.physician-lead {
+  margin: 0 0 16px;
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.physician-points {
+  margin: 0 0 22px;
+  padding-left: 1.15em;
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.physician-points li + li { margin-top: 7px; }
+.physician-cta { margin-top: auto; align-self: flex-start; }
+@media (max-width: 900px) {
+  .physician-grid { grid-template-columns: 1fr; max-width: 420px; }
+}
 .spec { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1.12; box-shadow: var(--shadow-sm); }
 .spec image-slot { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 0; box-shadow: none; }
 .spec img.fill { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block; }

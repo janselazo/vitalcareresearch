@@ -1,33 +1,47 @@
 #!/usr/bin/env python3
-"""Prepare Dr. Maria Rodil headshot: crop, upscale, enhance."""
+"""Prepare Dr. Maria Rodil headshot: fetch source, tighten crop, enhance, export."""
 
+from io import BytesIO
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 from PIL import Image, ImageEnhance, ImageFilter
 
-SRC = Path("/Users/janse/.cursor/projects/Users-janse-Documents-GitHub-vitalcareresearch/assets/Dr.-Maria-Rodil--0ee168a3-e3bc-4583-a06e-fbadfe319306.png")
+SRC_URL = "https://peaceofmindmh.com/wp-content/uploads/2025/11/Dr.-Maria-Rodil-.jpg"
 OUT = Path(__file__).resolve().parents[1] / "img" / "maria-rodil.png"
 
 
-def main() -> None:
-    img = Image.open(SRC).convert("RGB")
-    w, h = img.size
-    side = min(w, h)
-    left = (w - side) // 2
-    top = max(0, (h - side) // 2 - int(side * 0.06))
-    crop = img.crop((left, top, left + side, min(h, top + side)))
+def load_source() -> Image.Image:
+    req = Request(SRC_URL, headers={"User-Agent": "Mozilla/5.0"})
+    data = urlopen(req, timeout=20).read()
+    return Image.open(BytesIO(data)).convert("RGB")
 
-    size = 960
-    crop = crop.resize((size, size), Image.Resampling.LANCZOS)
-    crop = ImageEnhance.Brightness(crop).enhance(1.06)
-    crop = ImageEnhance.Contrast(crop).enhance(1.12)
-    crop = ImageEnhance.Color(crop).enhance(1.06)
-    crop = ImageEnhance.Sharpness(crop).enhance(1.45)
-    crop = crop.filter(ImageFilter.UnsharpMask(radius=1.6, percent=100, threshold=2))
+
+def face_square(img: Image.Image) -> Image.Image:
+    w, h = img.size
+    side = int(min(w, h) * 0.92)
+    left = (w - side) // 2
+    # Tighten framing and remove excess space above the head.
+    top = max(0, int(h * 0.06))
+    return img.crop((left, top, left + side, min(h, top + side)))
+
+
+def enhance(img: Image.Image, size: int = 1024) -> Image.Image:
+    img = img.resize((size, size), Image.Resampling.LANCZOS)
+    img = ImageEnhance.Brightness(img).enhance(1.05)
+    img = ImageEnhance.Contrast(img).enhance(1.14)
+    img = ImageEnhance.Color(img).enhance(1.08)
+    img = ImageEnhance.Sharpness(img).enhance(1.65)
+    return img.filter(ImageFilter.UnsharpMask(radius=1.4, percent=120, threshold=2))
+
+
+def main() -> None:
+    img = face_square(load_source())
+    img = enhance(img)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    crop.save(OUT, "PNG", optimize=True, compress_level=9)
-    print(f"wrote {OUT} ({size}x{size}, {OUT.stat().st_size // 1024}KB)")
+    img.save(OUT, "PNG", optimize=True, compress_level=9)
+    print(f"wrote {OUT} ({img.size[0]}x{img.size[1]}, {OUT.stat().st_size // 1024}KB)")
 
 
 if __name__ == "__main__":
