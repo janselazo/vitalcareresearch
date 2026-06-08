@@ -337,13 +337,82 @@ details.faq .ans { color: var(--body); padding: 0 50px 26px 0; max-width: 70ch; 
 }
 @media (max-width: 1024px) {
   .nav-links { display: none; }
-  .menu-btn { display: flex; }
-  .nav-links.open { display: flex; position: absolute; top: calc(100% + 10px); left: 0; right: 0; z-index: 70; flex-direction: column; align-items: stretch; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 14px; box-shadow: var(--shadow-lg); max-height: calc(100dvh - 110px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
-  .nav-links.open a { padding: 13px 16px; font-size: 16px; border-radius: 14px; }
-  .nav-links.open .nav-menu-cta { display: block; margin-top: 8px; padding: 0; }
-  .nav-links.open .nav-menu-cta a { padding: 14px 16px; }
+  .menu-btn { display: flex; transition: background .2s, color .2s; }
+  .menu-btn[aria-expanded="true"] { background: var(--blue-soft); color: var(--blue); }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    z-index: 70;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 12px;
+    box-shadow: var(--shadow-lg);
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    animation: navMenuIn .28s var(--ease);
+  }
+  .nav-links.open li { width: 100%; }
+  .nav-links.open a:not(.btn) {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 14px;
+    color: var(--ink-2);
+  }
+  .nav-links.open a:not(.btn):hover,
+  .nav-links.open a:not(.btn):focus-visible { color: var(--ink); background: var(--panel); }
+  .nav-links.open a:not(.btn).active { color: var(--blue); background: var(--blue-soft); }
+  .nav-links.open .nav-menu-cta {
+    display: block;
+    margin-top: 10px;
+    padding: 12px 4px 4px;
+    border-top: 1px solid var(--line-2);
+  }
+  .nav-links.open .nav-menu-cta a.btn-primary {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+    font-size: 15.5px;
+    color: #fff;
+    background: var(--blue);
+    box-shadow: 0 14px 30px -14px rgba(47,86,236,0.6);
+  }
+  .nav-links.open .nav-menu-cta a.btn-primary:hover { background: var(--blue-deep); color: #fff; }
+}
+@keyframes navMenuIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
 }
 body.nav-open { overflow: hidden; }
+body.nav-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(16, 22, 40, 0.32);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: navScrimIn .25s var(--ease);
+}
+@keyframes navScrimIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-links.open, body.nav-open::before { animation: none; }
+}
 /* small phones: drop the inline CTA button — it lives in the menu now */
 @media (max-width: 540px) {
   .nav-cta { display: none; }
@@ -364,7 +433,7 @@ body.nav-open { overflow: hidden; }
   /* tap targets */
   .btn { padding: 14px 22px; font-size: 15.5px; }
   .nav .btn-primary { font-size: 13.5px; padding: 9px 9px 9px 15px; }
-  .nav-links.open a { padding: 15px 16px; }
+  .nav-links.open a:not(.btn) { padding: 15px 16px; }
   /* cards a touch tighter */
   .card { padding: 26px; border-radius: 22px; }
   .card .ico { width: 50px; height: 50px; }
@@ -381,8 +450,8 @@ body.nav-open { overflow: hidden; }
   /* gallery single column on phones */
   .gallery { gap: 14px; grid-template-columns: 1fr; }
   .gallery figure { aspect-ratio: 16/11; }
-  .gallery figcaption { inset: 0; bottom: auto; display: flex; align-items: center; justify-content: center; text-align: center; background: none; text-shadow: 0 1px 12px rgba(0,0,0,0.55); }
-  .gallery figcaption span { display: block; width: 100%; text-align: center; }
+  .gallery figcaption { inset: auto; left: 0; right: 0; bottom: 0; display: block; padding: 12px 14px; font-size: 13px; text-align: left; background: linear-gradient(180deg, transparent, rgba(16,22,40,0.78)); text-shadow: none; }
+  .gallery figcaption span { display: block; width: auto; text-align: left; }
   /* page heroes */
   .page-hero .display { font-size: clamp(34px, 9.5vw, 52px); max-width: none !important; }
   /* chips & trusted strip */

@@ -38,7 +38,7 @@
     var page = document.body.getAttribute("data-page") || "home";
     var links = NAV.map(function (n) {
       return `<li><a href="${n.href}" class="${n.key === page ? 'active' : ''}" data-es="${n.es}">${n.label}</a></li>`;
-    }).join("") + `<li class="nav-menu-cta"><a href="contact.html" class="btn btn-primary no-circle" style="width:100%;justify-content:center;" data-es="Unirse a un Estudio">Join a Study</a></li>`;
+    }).join("") + `<li class="nav-menu-cta"><a href="contact.html" class="btn btn-primary no-circle" data-es="Unirse a un Estudio">Join a Study</a></li>`;
     host.innerHTML = `
       <header class="site-header" id="hdr">
         <div class="wrap">
